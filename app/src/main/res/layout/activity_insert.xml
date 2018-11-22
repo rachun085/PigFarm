@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".InsertActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="กรอกข้อมูลสุกรเข้าฝูง"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/nametitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="คุณ "
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"/>
+
+
+        <EditText
+            android:id="@+id/inputId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/inputPreglist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Preglist"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/inputRecdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Recorddate"
+            android:layout_marginTop="8dp"
+            android:inputType="datetime"/>
+
+        <EditText
+            android:id="@+id/inputBD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Birthday"
+            android:layout_marginTop="8dp"
+            android:inputType="datetime"/>
+
+        <EditText
+            android:id="@+id/inputBreed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Breed"
+            android:layout_marginTop="8dp"
+            android:inputType="datetime"/>
+
+
+        <EditText
+            android:id="@+id/inputIdBreeder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID Breeder"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/inputIdBreeder2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID Breeder2"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/inputForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Form"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/inputIdRes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID Res"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="SUBMIT"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/delBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="LOGOUT"
+            android:textSize="15sp"/>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

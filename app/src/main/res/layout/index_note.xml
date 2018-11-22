@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ColorBackground">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_menu"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        card_view:cardBackgroundColor="@color/ColorNavBar">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/thaisansneue_bold"
+            android:gravity="center"
+            android:text="บันทึกเหตุการณ์"
+            android:textColor="#ffffff"
+            android:textSize="28sp" />
+
+        <ImageView
+            android:id="@+id/img_back2"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/back"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"/>
+
+    </android.support.v7.widget.CardView>
+
+       <android.support.v7.widget.CardView
+           xmlns:card_view="http://schemas.android.com/apk/res-auto"
+           android:id="@+id/card_view"
+           android:layout_gravity="center"
+           android:layout_width="match_parent"
+           android:layout_height="120dp"
+           android:layout_below="@+id/card_menu"
+           card_view:cardBackgroundColor="@color/ColorShow">
+
+           <RelativeLayout
+               android:layout_width="350dp"
+               android:layout_height="50dp"
+               android:background="@color/ColorSpinner"
+               android:layout_marginLeft="15dp"
+               android:layout_marginTop="15dp">
+               <Spinner
+                   android:layout_width="350dp"
+                   android:layout_height="45dp"
+                   android:id="@+id/spin_event"
+                   android:spinnerMode="dropdown"
+                   />
+
+               <ImageView
+                   android:id="@+id/img_spin"
+                   android:layout_width="20dp"
+                   android:layout_height="20dp"
+                   android:layout_alignParentRight="true"
+                   android:layout_marginRight="15dp"
+                   android:layout_marginTop="15dp"
+                   android:src="@drawable/dropdown" />
+           </RelativeLayout>
+
+          <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_marginLeft="15dp"
+              android:layout_marginTop="70dp">
+
+               <TextView
+                   android:id="@+id/txt_farmNote"
+                   android:fontFamily="@font/thaisansneue_bold"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="ฟาร์ม:"
+                   android:textColor="#ffffff"
+                   android:textSize="25sp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginLeft="10dp" />
+
+               <TextView
+                   android:id="@+id/txt_unitNote"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="200dp"
+                   android:layout_marginTop="5dp"
+                   android:fontFamily="@font/thaisansneue_bold"
+                   android:text="ยูนิต:"
+                   android:textColor="#ffffff"
+                   android:textSize="25sp" />
+
+               <TextView
+                   android:id="@+id/txt_farmName2"
+                   android:fontFamily="@font/thaisansneue_regular"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="หลุ่มอวกาศ"
+                   android:textColor="#ffffff"
+                   android:textSize="25sp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginLeft="65dp"/>
+
+               <TextView
+                   android:id="@+id/txt_unitName2"
+                   android:fontFamily="@font/thaisansneue_regular"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="ศรีโสธร"
+                   android:textColor="#ffffff"
+                   android:textSize="25sp"
+                   android:layout_marginTop="5dp"
+                   android:layout_marginLeft="245dp"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/content_event"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="165dp">
+
+    </FrameLayout>
+
+</RelativeLayout>

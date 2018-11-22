@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ColorBackground"
+    android:orientation="vertical">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/Scroll_newnote"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_id2"
+                android:text="เบอร์หู"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <EditText
+                android:id="@+id/edit_id2"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"
+                />
+
+            <TextView
+                android:id="@+id/txt_pregNo2"
+                android:text="ลำดับท้อง"
+                android:textColor="@color/Colorfont"
+                android:textSize="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <EditText
+                android:id="@+id/edit_pregNo2"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <TextView
+                android:id="@+id/txt_opendate2"
+                android:text="วันที่เปิด"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_opendate2"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:inputType="date"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+                <ImageView
+                    android:id="@+id/img_calOpen2"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/calendar"
+                    android:layout_marginRight="30dp"/>
+
+</RelativeLayout>
+            <TextView
+                android:id="@+id/txt_birthday2"
+                android:text="วันเกิด"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:inputType="date"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/Colorfont">
+            <EditText
+                android:id="@+id/edit_birthday2"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:inputType="date"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+            <ImageView
+                android:id="@+id/img_calBD2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/calendar"
+                android:layout_marginRight="30dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_gene2"
+                android:text="สายพันธุ์"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:inputType="date"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <EditText
+                android:id="@+id/edit_breed2"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <TextView
+                android:id="@+id/txt_dadId2"
+                android:text="เบอร์พ่อ"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <EditText
+                android:id="@+id/edit_dadId2"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <TextView
+                android:id="@+id/txt_momId2"
+                android:text="เบอร์แม่"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <EditText
+                android:id="@+id/edit_momId2"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <TextView
+                android:id="@+id/txt_farm2"
+                android:text="แหล่งที่ได้"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <EditText
+                android:id="@+id/edit_form2"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <TextView
+                android:id="@+id/txt_spareID2"
+                android:text="เบอร์หูสำรอง"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <EditText
+                android:id="@+id/edit_reserveID2"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <Button
+            android:id="@+id/btn_saveBio2"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:text="บันทึกข้อมูล"
+            android:textSize="25dp"
+            android:fontFamily="@font/thaisansneue_bold"
+            android:background="@color/ColorNavBar"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

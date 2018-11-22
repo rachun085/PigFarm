@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/ColorBackground"
+    android:orientation="vertical">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/Scroll_act09"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_spinId09"
+                android:text="เบอร์หู"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <RelativeLayout
+                android:layout_width="325dp"
+                android:layout_height="45dp"
+                android:background="#d2d2d2"
+                android:layout_marginLeft="30dp">
+
+                <Spinner
+                    android:id="@+id/spin_noteId09"
+                    android:layout_width="325dp"
+                    android:layout_height="45dp"
+                    android:spinnerMode="dropdown"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_spin09"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/dropdown" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_dateNote09"
+                android:text="วันที่"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_dateNote09"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:inputType="date"
+                android:textSize="20sp"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <ImageView
+                android:id="@+id/img_calNote09"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/calendar"
+                android:layout_marginRight="30dp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_weight09"
+                android:fontFamily="@font/thaisansneue_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="น้ำหนักตัว (กิโลกรัม)"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"/>
+
+            <EditText
+                android:id="@+id/edit_weight09"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"
+                android:inputType="numberDecimal"/>
+
+            <Button
+                android:id="@+id/btn_flacAct09"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="@color/ColorNavBar"
+                android:fontFamily="@font/thaisansneue_bold"
+                android:text="บันทึกข้อมูล"
+                android:textSize="25dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

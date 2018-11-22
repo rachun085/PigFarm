@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+    <color name="custom_progress_blue_progress">#66B2FF</color>
+    <color name="ColorBackground">#D9D9D9</color>
+    <color name="ColorNavBar">#F5508A</color>
+    <color name="ColorShow">#F76196</color>
+    <color name="ColorSpinner">#ff7fac</color>
+    <color name="Colorfont">#000</color>
+</resources>

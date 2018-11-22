@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ColorBackground"
+    android:orientation="vertical">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/Scroll_dad"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_unitName2"
+                android:text="ชื่อยูนิต"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <EditText
+                android:id="@+id/edit_unitName2"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <TextView
+                android:id="@+id/txt_utype2"
+                android:text="ชนิดของยูนิต"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <RelativeLayout
+                android:layout_width="325dp"
+                android:layout_height="45dp"
+                android:background="#d2d2d2"
+                android:layout_marginLeft="30dp">
+
+                <Spinner
+                    android:id="@+id/spin_utype2"
+                    android:layout_width="325dp"
+                    android:layout_height="45dp"
+                    android:spinnerMode="dropdown"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_utype2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/dropdown" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_buildDate2"
+                android:text="วันที่สร้างโรงเรือน"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_buildDate2"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+                <ImageView
+                    android:id="@+id/img_calBuild2"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/calendar"
+                    android:layout_marginRight="30dp"/>
+
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/btn_saveu2"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center"
+                android:text="บันทึกข้อมูล"
+                android:textSize="25dp"
+                android:fontFamily="@font/thaisansneue_bold"
+                android:background="@color/ColorNavBar"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

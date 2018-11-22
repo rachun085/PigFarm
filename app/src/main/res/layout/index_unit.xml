@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ColorBackground"
+    >
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_menu"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        card_view:cardBackgroundColor="@color/ColorNavBar">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/thaisansneue_bold"
+            android:gravity="center"
+            android:text="เลือกยูนิต"
+            android:textColor="#ffffff"
+            android:textSize="28sp" />
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/back"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"/>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@+id/card_menu"
+        card_view:cardBackgroundColor="@color/ColorShow">
+
+            <RelativeLayout
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:background="@color/ColorSpinner"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp">
+                <Spinner
+                    android:layout_width="350dp"
+                    android:layout_height="45dp"
+                    android:id="@+id/unit"
+                    android:spinnerMode="dropdown"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_spinUnit"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/dropdown" />
+            </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/txt_farmOpen"
+            android:layout_marginTop="70dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <TableLayout
+                android:fontFamily="@font/thaisansneue_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <!-- Row1  -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:weightSum="1"
+                    android:layout_weight="0.33">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="160dp"
+                        android:layout_weight="0.33">
+
+                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/card_addUnit"
+                            android:layout_width="137dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentLeft="true"
+                            card_view:cardBackgroundColor="@color/ColorShow"
+                            >
+
+                            <TextView
+                                android:id="@+id/txt_addUnit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/thaisansneue_regular"
+                                android:text="เพิ่มยูนิต"
+                                android:textColor="#ffffff"
+                                android:textSize="25sp" />
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="160dp"
+                        android:layout_weight="0.33">
+
+                        <android.support.v7.widget.CardView
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/card_editUnit"
+                            android:layout_width="137dp"
+                            android:layout_height="50dp"
+                            card_view:cardBackgroundColor="@color/ColorShow">
+
+                            <TextView
+                                android:id="@+id/txt_editUnit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/thaisansneue_regular"
+                                android:text="แก้ไขยูนิต"
+                                android:textColor="#ffffff"
+                                android:textSize="25sp" />
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="160dp"
+                        android:layout_weight="0.33">
+
+                        <android.support.v7.widget.CardView
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/card_editName"
+                            android:layout_width="137dp"
+                            android:layout_height="50dp"
+                            android:layout_toRightOf="@id/card_newnote"
+                            card_view:cardBackgroundColor="@color/ColorShow">
+
+                            <TextView
+                                android:id="@+id/txt_editName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/thaisansneue_regular"
+                                android:text="แก้ไขชื่อยูนิต"
+                                android:textColor="#ffffff"
+                                android:textSize="25sp" />
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+                </TableRow>
+
+            </TableLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

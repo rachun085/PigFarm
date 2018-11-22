@@ -1,0 +1,28 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/thaisansneue_bold</item>
+        <item name="fontFamily">@font/thaisansneue_bold</item>
+    </style>
+
+    <style name="FontStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/thaisansneue_bold</item>
+    </style>
+
+    <style name="FontButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">@font/thaisansneue_bold</item>
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+</resources>

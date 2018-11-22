@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">PigFarm</string>
+    <color name="bg">#F76196</color>
+    <color name="black">#000</color>
+
+    <string-array name="Event_pig">
+        <item>โปรดเลือกเหตุการณ์</item>
+        <item>ผสมพันธุ์</item>
+        <item>ตรวจท้อง</item>
+        <item>แท้ง</item>
+        <item>คลอด</item>
+        <item>ฝากเลี้ยง</item>
+        <item>หย่านม</item>
+        <item>รับเลี้ยงลูก</item>
+        <item>คัดทิ้ง</item>
+        <item>น้ำหนักพ่อแม่</item>
+        <item>หมายเหตุ</item>
+    </string-array>
+
+    <string-array name="checkpreg">
+        <item>ท้อง</item>
+        <item>ไม่ท้อง</item>
+    </string-array>
+
+    <string-array name="exclude_event">
+        <item>ขาย</item>
+        <item>ตาย</item>
+        <item>ทำลาย</item>
+        <item>ย้าย</item>
+        <item>ไม่ทราบ</item>
+    </string-array>
+
+    <string-array name="eiei">
+        <item>ลูกหมูตาย</item>
+        <item>ให้ชื่อบริเวณ</item>
+        <item>เบอร์หาย</item>
+        <item>ตั้งชื่อคอก</item>
+        <item>เป็นสัดแต่ไม่ผสมพันะุ์</item>
+        <item>ท้องลม</item>
+        <item>แยกหย่านม</item>
+        <item>ชื่อกลุ่มผสมพันธุ์</item>
+        <item>ได้รับยารักษา</item>
+        <item>ป่วยเป็นโรค</item>
+    </string-array>
+    <string name="title_activity_test_view_pager">TestViewPager</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_basic">Basic</string>
+    <string name="drawer_open">Drawer_Open</string>
+    <string name="drawer_close">Drawer_Close</string>
+    <string name="title_activity_navigation">navigation</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+</resources>
