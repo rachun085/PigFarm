@@ -55,6 +55,7 @@ public class Home extends Activity{
     CardView card_setting, card_profile, card_event, card_report, card_data;
     String farm_owner ="";
     String farm_name = "";
+    String farm_id = "";
     String unit_name = "";
     String username = "";
     String password = "";
@@ -74,8 +75,6 @@ public class Home extends Activity{
         txt_farm = findViewById(R.id.txt_farm);
         txt_unit = findViewById(R.id.txt_unit);
 
-
-
         String url = "http://pigaboo.xyz/Query_Farm.php?username="+username+"&password="+password;
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
             @Override
@@ -86,7 +85,7 @@ public class Home extends Activity{
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "ไม่สามารถดึงข้อมูลได้ โปรดตรวจสอบการเชื่อมต่อ", Toast.LENGTH_SHORT).show();
             }
         }
         );
@@ -106,6 +105,7 @@ public class Home extends Activity{
                     farm_owner = collectData.getString("farm_owner");
                     farm_name = collectData.getString("farm_name");
                     unit_name = collectData.getString("unit_name");
+                    farm_id = collectData.getString("farm_id");
                     txt_user.setText(farm_owner);
                     txt_farm.setText(farm_name);
                     txt_unit.setText(unit_name);
@@ -124,6 +124,7 @@ public class Home extends Activity{
                             SharedPreferences.Editor editor2 = farm.edit();
                             editor2.putString("farm_name",farm_name);
                             editor2.putString("unit_name",unit_name);
+                            editor2.putString("farm_id",farm_id);
                             editor2.commit();
                             startActivity(intent);
                         }
@@ -137,6 +138,7 @@ public class Home extends Activity{
                             SharedPreferences.Editor editor2 = farm.edit();
                             editor2.putString("farm_name",farm_name);
                             editor2.putString("unit_name",unit_name);
+                            editor2.putString("farm_id",farm_id);
                             editor2.commit();
                             startActivity(intent);
                         }
@@ -150,6 +152,7 @@ public class Home extends Activity{
                             SharedPreferences.Editor editor2 = farm.edit();
                             editor2.putString("farm_name",farm_name);
                             editor2.putString("unit_name",unit_name);
+                            editor2.putString("farm_id",farm_id);
                             editor2.commit();
                             startActivity(intent);
                         }
@@ -174,9 +177,10 @@ public class Home extends Activity{
                             editor.clear();
                             editor.commit();
 
-                            //SharedPreferences.Editor editor2 = farm.edit();
-                            //editor2.clear();
-                            //editor2.apply();
+                            SharedPreferences farm = getSharedPreferences("Farm", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor2 = farm.edit();
+                            editor2.clear();
+                            editor2.apply();
 
                             Intent intent = new Intent(Home.this, LoginActivity.class);
                             startActivity(intent);
@@ -207,9 +211,10 @@ public class Home extends Activity{
                         editor.clear();
                         editor.commit();
 
-                        //SharedPreferences.Editor editor2 = farm.edit();
-                       // editor2.clear();
-                       // editor2.apply();
+                        SharedPreferences farm = getSharedPreferences("Farm", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor2 = farm.edit();
+                        editor2.clear();
+                        editor2.apply();
 
                         Intent intent = new Intent(Home.this, LoginActivity.class);
                         startActivity(intent);

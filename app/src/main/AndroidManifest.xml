@@ -33,8 +33,6 @@
         <activity
             android:name=".admin.pigfarm.Event_main"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".admin.pigfarm.ManageData_Page.MainManageData" />
 
         <activity android:name=".admin.pigfarm.ManageData_Page.MainActivity_ManageData"/>
     </application>

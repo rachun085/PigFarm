@@ -20,7 +20,7 @@ public class Event_main extends AppCompatActivity {
     Spinner event_spinner;
     ImageView img_back2;
     TextView txt_farmName2,txt_unitName2;
-    String getfarm_name,getunit_name;
+    String getfarm_name,getunit_name,getfarm_id;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class Event_main extends AppCompatActivity {
         SharedPreferences farm = getSharedPreferences("Farm", Context.MODE_PRIVATE);
         getfarm_name = farm.getString("farm_name", "");
         getunit_name = farm.getString("unit_name", "");
+        getfarm_id = farm.getString("farm_id","");
         txt_farmName2.setText(getfarm_name);
         txt_unitName2.setText(getunit_name);
 
@@ -60,6 +61,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Breed_Fragment breed_fragment = new Breed_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     breed_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -72,6 +74,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     CheckPregnant_Fragment checkpregnant_fragment = new CheckPregnant_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     checkpregnant_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -84,6 +87,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Pregnent_Fragment pregnant_fragment = new Pregnent_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     pregnant_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -96,6 +100,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Maternity_Fragment maternity_fragment = new Maternity_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     maternity_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -108,6 +113,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Entrustment_Fragment entrustment_fragment = new Entrustment_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     entrustment_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -120,6 +126,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Wean_Fragment wean_fragment = new Wean_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     wean_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -132,6 +139,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Adopt_Fragment adopt_fragment = new Adopt_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     adopt_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -144,6 +152,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Exclude_Fragment exclude_fragment = new Exclude_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     exclude_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -156,6 +165,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Weight_Fragment weight_fragment = new Weight_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     weight_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -168,6 +178,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Note_Fragment note_fragment = new Note_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     note_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

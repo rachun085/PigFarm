@@ -40,7 +40,7 @@ public class Pregnent_Fragment extends Fragment {
     ArrayList<String> list = new ArrayList<>();
     ArrayList<String> listItems = new ArrayList<>();
     ArrayAdapter<String> adapter;
-    public static String gettextbreed;
+    public static String gettextbreed,farm_id;
     Spinner spin_noteId03;
     EditText edit_dateNote03,edit_msg03;
     Button btn_flacAct03;
@@ -62,6 +62,7 @@ public class Pregnent_Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         if (getArguments() != null){
             gettextbreed = getArguments().getString("textbreed");
+            farm_id = getArguments().getString("farm_id");
             Toast.makeText(getActivity(), gettextbreed, Toast.LENGTH_SHORT).show();
         }
 
@@ -70,7 +71,7 @@ public class Pregnent_Fragment extends Fragment {
             edit_msg03 = getView().findViewById(R.id.edit_msg03);
             btn_flacAct03 = getView().findViewById(R.id.btn_flacAct03);
 
-            String url = "http://pigaboo.xyz/Query_pigid.php";
+            String url = "http://pigaboo.xyz/Query_pigid.php?farm_id="+farm_id;
             StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {

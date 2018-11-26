@@ -23,7 +23,7 @@ public class Open_Profile extends AppCompatActivity {
     TextView txt_farmOpen2,txt_unitOpen2;
     CardView card_geneMom, card_newnote, card_geneDad;
     ImageView img_back;
-    String getfarm_name2,getunit_name2;
+    String getfarm_name2,getunit_name2,getfarm_id;
     ViewPager pager;
 
     @Override
@@ -41,6 +41,7 @@ public class Open_Profile extends AppCompatActivity {
         SharedPreferences farm = getSharedPreferences("Farm", Context.MODE_PRIVATE);
         getfarm_name2 = farm.getString("farm_name", "");
         getunit_name2 = farm.getString("unit_name", "");
+        getfarm_id = farm.getString("farm_id","");
         txt_farmOpen2.setText(getfarm_name2);
         txt_unitOpen2.setText(getunit_name2);
 

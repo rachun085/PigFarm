@@ -44,7 +44,7 @@ public class Breed_Fragment extends Fragment {
     ArrayList<String> list = new ArrayList<>();
     ArrayList<String> listItems = new ArrayList<>();
     ArrayAdapter<String> adapter;
-    public static String gettextbreed;
+    public static String gettextbreed,farm_id;
 
     public Breed_Fragment() {
 
@@ -70,10 +70,11 @@ public class Breed_Fragment extends Fragment {
 
         if (getArguments() != null) {
             gettextbreed = getArguments().getString("textbreed");
+            farm_id = getArguments().getString("farm_id");
             Toast.makeText(getActivity(), gettextbreed, Toast.LENGTH_SHORT).show();
         }
 
-        String url = "http://pigaboo.xyz/Query_pigid.php";
+        String url = "http://pigaboo.xyz/Query_pigid.php?farm_id="+farm_id;
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

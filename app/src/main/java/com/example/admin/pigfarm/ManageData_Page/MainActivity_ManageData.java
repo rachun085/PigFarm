@@ -12,14 +12,12 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.R;
-import com.example.admin.pigfarm.Adopt_Fragment;
 import com.example.admin.pigfarm.Home;
 
 public class MainActivity_ManageData extends AppCompatActivity{
@@ -29,7 +27,7 @@ public class MainActivity_ManageData extends AppCompatActivity{
     private ActionBarDrawerToggle toggle;
     NavigationView navigation;
     private String getfarm_name;
-    private String getunit_name;
+    private String getunit_name,getfarm_id;
     TextView textfarm_drawer, textunit_drawer;
 
     @Override
@@ -52,6 +50,7 @@ public class MainActivity_ManageData extends AppCompatActivity{
         SharedPreferences farm = getSharedPreferences("Farm", Context.MODE_PRIVATE);
         getfarm_name = farm.getString("farm_name", "");
         getunit_name = farm.getString("unit_name", "");
+        getfarm_id = farm.getString("farm_id","");
         textfarm_drawer.setText("ฟาร์ม : "+getfarm_name);
         textunit_drawer.setText("ยูนิต : "+getunit_name);
 

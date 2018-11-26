@@ -37,7 +37,7 @@ import okhttp3.RequestBody;
 
 
 public class Note_Fragment extends Fragment {
-    public static String gettextbreed;
+    public static String gettextbreed,farm_id;
     ArrayList<String> list = new ArrayList<>();
     ArrayList<String> listItems = new ArrayList<>();
     ArrayAdapter<String> adapter;
@@ -60,6 +60,7 @@ public class Note_Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         if (getArguments() != null){
             gettextbreed = getArguments().getString("textbreed");
+            farm_id = getArguments().getString("farm_id");
             Toast.makeText(getActivity(), gettextbreed, Toast.LENGTH_SHORT).show();
         }
 
@@ -68,7 +69,7 @@ public class Note_Fragment extends Fragment {
         edit_msg10 = getView().findViewById(R.id.edit_msg10);
         btn_flacAct10 = getView().findViewById(R.id.btn_flacAct10);
 
-        String url = "http://pigaboo.xyz/Query_pigid.php";
+        String url = "http://pigaboo.xyz/Query_pigid.php?farm_id="+farm_id;
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
