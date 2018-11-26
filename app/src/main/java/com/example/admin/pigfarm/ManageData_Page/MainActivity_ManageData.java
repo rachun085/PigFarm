@@ -1,6 +1,9 @@
 package com.example.admin.pigfarm.ManageData_Page;
 
+import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -18,7 +21,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.R;
+import com.example.admin.pigfarm.Event_main;
 import com.example.admin.pigfarm.Home;
+import com.example.admin.pigfarm.LoginActivity;
+import com.example.admin.pigfarm.Open_Profile;
 
 public class MainActivity_ManageData extends AppCompatActivity{
 
@@ -63,6 +69,7 @@ public class MainActivity_ManageData extends AppCompatActivity{
 
         drawerLayout = findViewById(R.id.drawer_layout);
         toggle = new ActionBarDrawerToggle(MainActivity_ManageData.this, drawerLayout,R.string.drawer_open, R.string.drawer_close);
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
 
         drawerLayout.addDrawerListener(toggle);
 
@@ -74,7 +81,60 @@ public class MainActivity_ManageData extends AppCompatActivity{
                     case R.id.nav_home:
                         Intent intent = new Intent(MainActivity_ManageData.this, Home.class);
                         startActivity(intent);
+
                         break;
+                    case R.id.nav_openprofile:
+                        Intent intent2 = new Intent(MainActivity_ManageData.this, Open_Profile.class);
+                        startActivity(intent2);
+
+                        break;
+                    case R.id.nav_event:
+                        Intent intent3 = new Intent(MainActivity_ManageData.this, Event_main.class);
+                        startActivity(intent3);
+
+                        break;
+                    case R.id.nav_datapig:
+                        Intent intent4 = new Intent(MainActivity_ManageData.this, MainActivity_ManageData.class);
+                        startActivity(intent4);
+
+                        break;
+                    case R.id.nav_about:
+                        Intent intent5 = new Intent( );
+                        intent5.setComponent(new ComponentName("com.example.admin.pigfarm","com.example.admin.pigfarm.about_activity"));
+                        startActivity(intent5);
+
+                        break;
+                    case R.id.nav_logout:
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity_ManageData.this, R.style.Theme_AppCompat_DayNight_Dialog_Alert);
+                        builder.setCancelable(true);
+                        builder.setMessage("คุณต้องการออกระบบใช่หรือไม่");
+                        builder.setPositiveButton("ใช่",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        SharedPreferences shared = getSharedPreferences("Login", Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = shared.edit();
+                                        editor.clear();
+                                        editor.commit();
+
+                                        SharedPreferences farm = getSharedPreferences("Farm", Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor editor2 = farm.edit();
+                                        editor2.clear();
+                                        editor2.apply();
+
+                                        Intent intent = new Intent(MainActivity_ManageData.this, LoginActivity.class);
+                                        startActivity(intent);
+                                    }
+                                });
+                        builder.setNegativeButton("ไม่ใช่", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
                 }
                 return false;
             }

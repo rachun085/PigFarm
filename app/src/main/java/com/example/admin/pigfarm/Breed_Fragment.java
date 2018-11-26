@@ -29,7 +29,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -66,6 +69,10 @@ public class Breed_Fragment extends Fragment {
         edit_dateNote01 = getView().findViewById(R.id.edit_dateNote01);
         edit_dadIdAct01 = getView().findViewById(R.id.edit_dadIdAct01);
         btn_flacAct01 = getView().findViewById(R.id.btn_flacAct01);
+
+        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+                Locale.getDefault()).format(new Date());
+        edit_dateNote01.setText(date_n);
 
 
         if (getArguments() != null) {

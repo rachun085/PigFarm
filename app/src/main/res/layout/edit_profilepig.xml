@@ -28,7 +28,7 @@
         android:layout_marginRight="30dp"
         android:textColor="@color/Colorfont"
         android:backgroundTint="@color/Colorfont"
-        android:inputType="date"/>
+        android:inputType="text"/>
 
     <TextView
         android:id="@+id/txt_new"
@@ -96,8 +96,7 @@
         android:layout_marginRight="30dp"
         android:textColor="@color/Colorfont"
         android:backgroundTint="@color/Colorfont"
-        android:layout_below="@id/edit_bd"
-        android:inputType="date"/>
+        android:layout_below="@id/edit_bd"/>
 
     <TextView
         android:id="@+id/txt_dadNo"
@@ -119,8 +118,7 @@
         android:layout_marginRight="30dp"
         android:textColor="@color/Colorfont"
         android:backgroundTint="@color/Colorfont"
-        android:layout_below="@id/edit_gene"
-        android:inputType="date"/>
+        android:layout_below="@id/edit_gene" />
 
     <TextView
         android:id="@+id/txt_momNo"
@@ -142,8 +140,7 @@
         android:layout_marginRight="30dp"
         android:textColor="@color/Colorfont"
         android:backgroundTint="@color/Colorfont"
-        android:layout_below="@id/edit_dadNo"
-        android:inputType="date"/>
+        android:layout_below="@id/edit_dadNo" />
 
     <TextView
         android:id="@+id/txt_location"
@@ -165,8 +162,7 @@
         android:layout_marginRight="30dp"
         android:textColor="@color/Colorfont"
         android:backgroundTint="@color/Colorfont"
-        android:layout_below="@id/edit_momNo"
-        android:inputType="date"/>
+        android:layout_below="@id/edit_momNo" />
 
     <TextView
         android:id="@+id/txt_spareID"
@@ -188,8 +184,7 @@
         android:layout_marginRight="30dp"
         android:textColor="@color/Colorfont"
         android:backgroundTint="@color/Colorfont"
-        android:layout_below="@id/edit_location"
-        android:inputType="date"/>
+        android:layout_below="@id/edit_location" />
 
     <TextView
         android:id="@+id/txt_preglist"
@@ -211,8 +206,7 @@
         android:layout_marginRight="30dp"
         android:textColor="@color/Colorfont"
         android:backgroundTint="@color/Colorfont"
-        android:layout_below="@id/edit_spareID"
-        android:inputType="date"/>
+        android:layout_below="@id/edit_spareID" />
 
         <Button
             android:id="@+id/btn_update"
@@ -224,7 +218,7 @@
             android:layout_below="@+id/edit_preglist"
             android:fontFamily="@font/thaisansneue_bold"
             android:background="@color/ColorNavBar"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:layout_centerHorizontal="true"/>
 
 

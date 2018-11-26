@@ -28,7 +28,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -69,6 +72,10 @@ public class CheckPregnant_Fragment extends Fragment {
         spin_noteId02 = getView().findViewById(R.id.spin_noteId02);
         spin_result02 = getView().findViewById(R.id.spin_result02);
         btn_flacAct02 = getView().findViewById(R.id.btn_flacAct02);
+
+        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+                Locale.getDefault()).format(new Date());
+        edit_dateNote02.setText(date_n);
 
         final String[] eventStr = getResources().getStringArray(R.array.checkpreg);
         ArrayAdapter<String> adapterEvent = new ArrayAdapter<String>(this.getActivity(),

@@ -47,14 +47,13 @@
         android:id="@+id/signin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#ffffff"
         android:textSize="19dp"
         android:padding="16dp"
         android:gravity="center"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="120dp"
         android:layout_centerHorizontal="true"
-        />
+        android:indeterminateTint="@color/white" />
 
 
 </RelativeLayout>

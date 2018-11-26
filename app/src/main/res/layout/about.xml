@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="@color/ColorBackground">
+
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_about"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        card_view:cardBackgroundColor="@color/ColorNavBar">
+
+        <TextView
+            android:id="@+id/txt_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/thaisansneue_bold"
+            android:gravity="center"
+            android:text="เกี่ยวกับ"
+            android:textColor="#ffffff"
+            android:textSize="28sp" />
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/back"
+            android:layout_gravity="left"
+            android:onClick="onBackClick"
+            android:layout_marginLeft="15dp"/>
+
+    </android.support.v7.widget.CardView>
+
+    <ScrollView android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card_about"
+        android:id="@+id/scrollView">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_nut"
+                android:background="@color/ColorBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardBackgroundColor="#ffff">
+
+                <ImageView
+                    android:id="@+id/img_nut"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/bung"
+                    android:layout_marginLeft="60dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_IDnut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="593020525-7"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/thaisansneue_bold"
+                    android:layout_marginLeft="190dp"
+                    android:layout_below="@id/card_about"
+                    android:layout_marginTop="15dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txt_NameNut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="นายศุภณัฐ เหลี่ยมพิทักษ์"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/thaisansneue_regular"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginTop="35dp"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_kwang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                card_view:cardBackgroundColor="#ffff"
+                android:layout_below="@id/card_nut">
+
+                <ImageView
+                    android:id="@+id/img_kwang"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/kwang"
+                    android:layout_marginLeft="60dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_IDkwang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="593020534-6"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/thaisansneue_bold"
+                    android:layout_marginLeft="190dp"
+                    android:layout_below="@id/card_about"
+                    android:layout_marginTop="15dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txt_NameKwang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="นางสาวอภิญญา สารสินธุ์"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/thaisansneue_regular"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginTop="35dp"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_birth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                card_view:cardBackgroundColor="#ffff"
+                android:layout_below="@id/card_kwang">
+
+                <ImageView
+                    android:id="@+id/img_birth"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/birth"
+                    android:layout_marginLeft="60dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_IDbirth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="593020518-4"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/thaisansneue_bold"
+                    android:layout_marginLeft="190dp"
+                    android:layout_below="@id/card_about"
+                    android:layout_marginTop="15dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txt_NameBirth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="นายวรพล  กฤตเวทิน"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/thaisansneue_regular"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginTop="35dp"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_phoom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardBackgroundColor="#ffff"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/card_birth">
+
+                <ImageView
+                    android:id="@+id/img_phoom"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/phoom"
+                    android:layout_marginLeft="60dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_IDphoom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="593020524-9"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/thaisansneue_bold"
+                    android:layout_marginLeft="190dp"
+                    android:layout_below="@id/card_about"
+                    android:layout_marginTop="15dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txt_NamePhoom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="นายศิวกร  อนันต์เอื้อ"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/thaisansneue_regular"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginTop="35dp"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_pond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                card_view:cardBackgroundColor="#ffff"
+                android:layout_below="@id/card_phoom">
+
+                <ImageView
+                    android:id="@+id/img_pond"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/pond"
+                    android:layout_marginLeft="60dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_IDpond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5930205829-7"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/thaisansneue_bold"
+                    android:layout_marginLeft="190dp"
+                    android:layout_below="@id/card_about"
+                    android:layout_marginTop="15dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txt_NamePond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="นายปรเมนทร์  รอดขันเมือง"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/thaisansneue_regular"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginTop="35dp"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_fame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                card_view:cardBackgroundColor="#ffff"
+                android:layout_below="@id/card_pond">
+
+                <ImageView
+                    android:id="@+id/img_fame"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/fame"
+                    android:layout_marginLeft="60dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_IDfame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="593020842-5"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/thaisansneue_bold"
+                    android:layout_marginLeft="190dp"
+                    android:layout_below="@id/card_about"
+                    android:layout_marginTop="15dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txt_NameFame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="นายอนันตทรัพย์  ปรีชาชาญ"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:fontFamily="@font/thaisansneue_regular"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginTop="35dp"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
+
+

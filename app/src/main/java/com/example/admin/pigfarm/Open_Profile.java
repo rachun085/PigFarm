@@ -100,6 +100,7 @@ public class Open_Profile extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(Open_Profile.this, Home.class);
                         startActivity(intent);
+                        finish();
 
                     }
                 });

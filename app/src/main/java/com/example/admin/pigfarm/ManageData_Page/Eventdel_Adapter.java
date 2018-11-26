@@ -49,8 +49,8 @@ public class Eventdel_Adapter extends RecyclerView.Adapter<Eventdel_Adapter.Even
         String event_name = delEvent_items.getevent_name();
         String event_recorddate = delEvent_items.getevent_recorddate();
 
-        holder.textevent_name.setText("เหตุการณ์ : "+delEvent_items.getevent_name());
-        holder.textevent_recorddate.setText("วันที่บันทึก : "+delEvent_items.getevent_recorddate());
+        holder.textevent_name.setText("เหตุการณ์ : "+event_name);
+        holder.textevent_recorddate.setText("วันที่บันทึก : "+event_recorddate);
 
     }
 

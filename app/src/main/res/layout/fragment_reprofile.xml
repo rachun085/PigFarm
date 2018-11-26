@@ -77,7 +77,7 @@
 
             <EditText
                 android:id="@+id/edit_opendate2"
-                android:layout_width="280dp"
+                android:layout_width="325dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:textSize="20sp"
@@ -86,13 +86,13 @@
                 android:textColor="@color/Colorfont"
                 android:backgroundTint="@color/Colorfont"/>
 
-                <ImageView
-                    android:id="@+id/img_calOpen2"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/calendar"
-                    android:layout_marginRight="30dp"/>
+                <!--<ImageView-->
+                    <!--android:id="@+id/img_calOpen2"-->
+                    <!--android:layout_width="45dp"-->
+                    <!--android:layout_height="45dp"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:src="@drawable/calendar"-->
+                    <!--android:layout_marginRight="30dp"/>-->
 
 </RelativeLayout>
             <TextView
@@ -113,7 +113,7 @@
                 android:backgroundTint="@color/Colorfont">
             <EditText
                 android:id="@+id/edit_birthday2"
-                android:layout_width="280dp"
+                android:layout_width="325dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:textSize="20sp"
@@ -121,13 +121,13 @@
                 android:fontFamily="@font/thaisansneue_regular"
                 android:textColor="@color/Colorfont"
                 android:backgroundTint="@color/Colorfont"/>
-            <ImageView
-                android:id="@+id/img_calBD2"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/calendar"
-                android:layout_marginRight="30dp"/>
+            <!--<ImageView-->
+                <!--android:id="@+id/img_calBD2"-->
+                <!--android:layout_width="45dp"-->
+                <!--android:layout_height="45dp"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:src="@drawable/calendar"-->
+                <!--android:layout_marginRight="30dp"/>-->
 
             </RelativeLayout>
 

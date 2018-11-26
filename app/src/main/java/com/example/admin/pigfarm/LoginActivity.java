@@ -107,7 +107,7 @@ public class LoginActivity extends Activity {
                     editor.putString("username",user);
                     editor.putString("farm_id",farm_id);
                     editor.commit();
-                    Toast.makeText(LoginActivity.this, user+" "+pass + " farm id = " + farm_id, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "ยินดีต้อนรับ! "+username, Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(LoginActivity.this, Home.class);
                     startActivity(intent);

@@ -3,6 +3,7 @@ package com.example.admin.pigfarm.ManageData_Page;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import com.example.R;
 
 import java.util.List;
+
+import static android.support.constraint.Constraints.TAG;
 
 public class Event_Adapter extends RecyclerView.Adapter<Event_Adapter.EventViewHolder>{
 
@@ -34,11 +37,17 @@ public class Event_Adapter extends RecyclerView.Adapter<Event_Adapter.EventViewH
     public void onBindViewHolder(@NonNull Event_Adapter.EventViewHolder holder, int position) {
         Event_items event_items = itemsList.get(position);
 
+        if (event_items.getEventname().equals("null") && event_items.getEvent_recorddate().equals("null")){
+            holder.eventdata_name.setText("ไม่มีเกตุการณ์");
+            holder.eventdata_recorddate.setText("");
+        }else {
+
             holder.eventdata_name.setText(event_items.getEventname());
             holder.eventdata_recorddate.setText(event_items.getEvent_recorddate());
-            if (event_items.getEventname() == null){
-                holder.eventdata_name.setText(event_items.setEventname("eiei"));
-            }
+        }
+
+
+        Log.d("CHECK EVEVT"," "+event_items.getEventname()+"  "+event_items.getEvent_recorddate());
 
     }
 

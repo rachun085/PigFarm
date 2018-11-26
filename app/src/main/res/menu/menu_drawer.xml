@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+    <group android:id="@+id/gr1" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="Home"/>
+            android:title="หน้าแรก"/>
         <item
             android:id="@+id/nav_openprofile"
-            android:icon="@drawable/ic_open_profile"
+            android:icon="@drawable/ic_folder_open_black_24dp"
             android:title="เปิดประวัติ"/>
+        <item
+            android:id="@+id/nav_event"
+            android:icon="@drawable/ic_save_black_24dp"
+            android:title="บันทึกเหตุการณ์"/>
+        <item
+            android:id="@+id/nav_datapig"
+            android:icon="@drawable/ic_open_profile"
+            android:title="ข้อมูลสุกร"/>
+    </group>
+
+    <group android:id="@+id/gr2" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_assignment_ind_black_24dp"
+            android:title="เกี่ยวกับ"/>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="ออกจากระบบ"/>
     </group>
 </menu>

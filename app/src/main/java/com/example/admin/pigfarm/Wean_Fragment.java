@@ -28,7 +28,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -69,6 +72,10 @@ public class Wean_Fragment extends Fragment {
         edit_numbaby06 = getView().findViewById(R.id.edit_numbaby06);
         edit_weight06 = getView().findViewById(R.id.edit_weight06);
         btn_flacAct06 = getView().findViewById(R.id.btn_flacAct06);
+
+        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+                Locale.getDefault()).format(new Date());
+        edit_dateNote06.setText(date_n);
 
         String url = "http://pigaboo.xyz/Query_pigid.php?farm_id="+farm_id;
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {

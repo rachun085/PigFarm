@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageButton;
@@ -48,11 +49,11 @@ import java.util.List;
 
 
 
-public class Home extends Activity{
+public class Home extends AppCompatActivity{
 
     ImageButton img_logout;
     TextView txt_user, txt_farm, txt_unit;
-    CardView card_setting, card_profile, card_event, card_report, card_data;
+    CardView card_setting, card_profile, card_event, card_about, card_data;
     String farm_owner ="";
     String farm_name = "";
     String farm_id = "";
@@ -69,7 +70,13 @@ public class Home extends Activity{
         username = shared.getString("username", "");
         password = shared.getString("pass", "");
 
-        mSwipeRefresh = findViewById(R.id.swipe_refresh_layout);
+        mSwipeRefresh = findViewById(R.id.swiperefresh);
+        mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                doupdate();
+            }
+        });
 
         txt_user = findViewById(R.id.txt_user);
         txt_farm = findViewById(R.id.txt_farm);
@@ -94,6 +101,15 @@ public class Home extends Activity{
 
     }
 
+    private void doupdate(){
+        mSwipeRefresh.setRefreshing(false);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
     public void showJSON(String response){
             try {
                 JSONObject jsonObject = new JSONObject(response);
@@ -113,6 +129,7 @@ public class Home extends Activity{
                     card_profile = findViewById(R.id.card_profile);
                     card_event = findViewById(R.id.card_event);
                     card_data = findViewById(R.id.card_data);
+                    card_about = findViewById(R.id.card_about);
 
 
 
@@ -154,6 +171,14 @@ public class Home extends Activity{
                             editor2.putString("unit_name",unit_name);
                             editor2.putString("farm_id",farm_id);
                             editor2.commit();
+                            startActivity(intent);
+                        }
+                    });
+
+                    card_about.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(Home.this, about_activity.class);
                             startActivity(intent);
                         }
                     });

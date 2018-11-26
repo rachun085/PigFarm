@@ -2,12 +2,14 @@ package com.example.admin.pigfarm.ManageData_Page;
 
 
 import android.app.ProgressDialog;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +42,7 @@ public class Fragment_datapig extends android.support.v4.app.Fragment {
     List<Event_items> itemsList;
     RecyclerView recyclerView;
     ImageView editprofile,editevent;
+    Event_Adapter adapter;
 
 
     public Fragment_datapig() {
@@ -78,8 +81,26 @@ public class Fragment_datapig extends android.support.v4.app.Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         itemsList = new ArrayList<>();
 
-
             loadDatapigs();
+
+            editevent.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    DelEvent_Fragment delEvent_fragment = new DelEvent_Fragment();
+                    Bundle bundle3 = new Bundle();
+                    bundle3.putString("pig_no",getpigno);
+                    bundle3.putString("pig_id",getpigid);
+                    delEvent_fragment.setArguments(bundle3);
+
+                    FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+                    ft.replace(R.id.container, delEvent_fragment);
+                    ft.addToBackStack(null);
+                    ft.commit();
+
+
+                }
+            });
 
             editprofile.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -94,23 +115,6 @@ public class Fragment_datapig extends android.support.v4.app.Fragment {
                     ft.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
                     edit_profilePig.setArguments(bundle2);
                     ft.replace(R.id.container, edit_profilePig);
-                    ft.addToBackStack(null);
-                    ft.commit();
-                }
-            });
-
-            editevent.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    DelEvent_Fragment delEvent_fragment = new DelEvent_Fragment();
-                    Bundle bundle3 = new Bundle();
-                    bundle3.putString("pig_no",getpigno);
-                    bundle3.putString("pig_id",getpigid);
-                    delEvent_fragment.setArguments(bundle3);
-
-                    FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-                    ft.replace(R.id.container, delEvent_fragment);
                     ft.addToBackStack(null);
                     ft.commit();
                 }
@@ -173,6 +177,14 @@ public class Fragment_datapig extends android.support.v4.app.Fragment {
                 text_bredder1.setText(pig_idbreeder2);
                 text_reserveid.setText(pig_idreserve);
                 text_from.setText(pig_from);
+
+                if(event_name.equals("null") && event_recorddate.equals("null")) {
+                    Log.d("CHECK EVENT " , " "+event_name+"  "+event_recorddate);
+                }else {
+                    Event_items event_items = new Event_items(event_name, event_recorddate);
+                    itemsList.add(event_items);
+
+                }
                 if(pig_preglist.isEmpty()){
                     text_preglist.setVisibility(View.INVISIBLE);
                     texttitle_preglist.setVisibility(View.INVISIBLE);
@@ -181,11 +193,16 @@ public class Fragment_datapig extends android.support.v4.app.Fragment {
                     texttitle_preglist.setVisibility(View.VISIBLE);
                     text_preglist.setText(pig_preglist);
                 }
-                    Event_items event_items = new Event_items(event_name,event_recorddate);
-                    itemsList.add(event_items);
+
             }
-            Event_Adapter adapter = new Event_Adapter(getActivity(),itemsList);
+
+            adapter = new Event_Adapter(getActivity(),itemsList);
             recyclerView.setAdapter(adapter);
+
+            if (adapter.getItemCount() == 0 ){
+                editevent.setVisibility(View.INVISIBLE);
+            }
+
         }catch (JSONException ex) {
             ex.printStackTrace();
         }

@@ -77,7 +77,7 @@
                 android:layout_marginLeft="65dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/thaisansneue_regular"
-                android:text="หลุ่มอวกาศ"
+                android:text=""
                 android:textColor="#ffffff"
                 android:textSize="25sp" />
 
@@ -89,7 +89,7 @@
                 android:layout_alignTop="@+id/txt_farmOpen"
                 android:layout_marginEnd="71dp"
                 android:fontFamily="@font/thaisansneue_regular"
-                android:text="ศรีโสธร"
+                android:text=""
                 android:textColor="#ffffff"
                 android:textSize="25sp" />
 

@@ -19,15 +19,15 @@ import android.widget.Toast;
 import com.example.R;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Newbredder_Fragment extends Fragment {
 
     EditText edit_id3, edit_opendate3, edit_birthday3, edit_breed3, edit_dadId3, edit_momId3, edit_form3, edit_reserveID3;
@@ -36,14 +36,12 @@ public class Newbredder_Fragment extends Fragment {
 
 
     public Newbredder_Fragment() {
-        // Required empty public constructor
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_bredder, container, false);
     }
 
@@ -68,6 +66,10 @@ public class Newbredder_Fragment extends Fragment {
         edit_form3 = getView().findViewById(R.id.edit_form3);
         edit_reserveID3 = getView().findViewById(R.id.edit_reserveID3);
         btn_saveBio3 = getView().findViewById(R.id.btn_saveBio3);
+
+        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+                Locale.getDefault()).format(new Date());
+        edit_opendate3.setText(date_n);
 
         btn_saveBio3.setOnClickListener(onSubmitClickListener);
     }

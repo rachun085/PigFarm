@@ -45,6 +45,7 @@ public class Newpig_Fragment extends Fragment {
     EditText edit_id, edit_opendate, edit_birthday, edit_breed, edit_dadId, edit_momId, edit_form, edit_reserveID;
     String farm_id;
     ImageView img_calOpen1, img_calBD1;
+    DatePickerDialog.OnDateSetListener opendate,bddate;
 
     public Newpig_Fragment() {
     }
@@ -73,8 +74,8 @@ public class Newpig_Fragment extends Fragment {
         edit_form = getView().findViewById(R.id.edit_form1);
         edit_reserveID = getView().findViewById(R.id.edit_reserveID);
         btnSubmitNewpig = getView().findViewById(R.id.btn_youngpig);
-        img_calOpen1 = getView().findViewById(R.id.img_calOpen1);
-        img_calBD1 = getView().findViewById(R.id.img_calBD1);
+//        img_calOpen1 = getView().findViewById(R.id.img_calOpen1);
+//        img_calBD1 = getView().findViewById(R.id.img_calBD1);
 
         String date_n = new SimpleDateFormat("yyyy/MM/dd",
                 Locale.getDefault()).format(new Date());
@@ -83,22 +84,22 @@ public class Newpig_Fragment extends Fragment {
 
         btnSubmitNewpig.setOnClickListener(onSubmitClickListener);
 
-        img_calOpen1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment newFragment = new SelectDateFragment();
-                newFragment.show(getFragmentManager(), "DatePicker");
-
-            }
-        });
-
-        img_calBD1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment newFragment = new SelectDateFragment();
-                newFragment.show(getFragmentManager(), "DatePicker");
-            }
-        });
+//        img_calOpen1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                DialogFragment newFragment = new SelectDateFragment();
+//                newFragment.show(getFragmentManager(), "DatePicker");
+//
+//            }
+//        });
+//
+//        img_calBD1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                DialogFragment newFragment = new SelectDateFragment();
+//                newFragment.show(getFragmentManager(), "DatePicker");
+//            }
+//        });
     }
 
 

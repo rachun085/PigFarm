@@ -19,6 +19,9 @@ import android.widget.Toast;
 import com.example.R;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -36,14 +39,12 @@ public class Reprofile_Fragment extends Fragment {
 
 
     public Reprofile_Fragment() {
-        // Required empty public constructor
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_reprofile, container, false);
     }
 
@@ -69,6 +70,10 @@ public class Reprofile_Fragment extends Fragment {
         edit_form2 = getView().findViewById(R.id.edit_form2);
         edit_reserveID2 = getView().findViewById(R.id.edit_reserveID2);
         btn_saveBio2 = getView().findViewById(R.id.btn_saveBio2);
+
+        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+                Locale.getDefault()).format(new Date());
+        edit_opendate2.setText(date_n);
 
         btn_saveBio2.setOnClickListener(onSubmitClickListener);
     }

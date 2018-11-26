@@ -1,6 +1,8 @@
 package com.example.admin.pigfarm;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -43,14 +45,35 @@ public class Event_main extends AppCompatActivity {
         img_back2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Event_main.this, Home.class);
-                startActivity(intent);
+                AlertDialog.Builder builder = new AlertDialog.Builder(Event_main.this);
+                builder.setCancelable(true);
+                builder.setMessage("บันทึกข้อมูลแล้วใช่หรือไม่");
+                builder.setPositiveButton("ใช่",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent(Event_main.this, Home.class);
+                                startActivity(intent);
+                                finish();
+
+                            }
+                        });
+                builder.setNegativeButton("ไม่ใช่", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
 
         final String[] eventStr = getResources().getStringArray(R.array.Event_pig);
         ArrayAdapter<String> adapterEvent = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, eventStr);
+        adapterEvent.setDropDownViewResource(R.layout.spinner_item);
         event_spinner.setAdapter(adapterEvent);
 
         event_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

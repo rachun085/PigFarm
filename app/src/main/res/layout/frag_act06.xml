@@ -68,7 +68,7 @@
 
             <EditText
                 android:id="@+id/edit_dateNote06"
-                android:layout_width="280dp"
+                android:layout_width="325dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:inputType="date"
@@ -76,13 +76,13 @@
                 android:textColor="@color/Colorfont"
                 android:backgroundTint="@color/Colorfont"/>
 
-            <ImageView
-                android:id="@+id/img_calNote06"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/calendar"
-                android:layout_marginRight="30dp"/>
+            <!--<ImageView-->
+                <!--android:id="@+id/img_calNote06"-->
+                <!--android:layout_width="45dp"-->
+                <!--android:layout_height="45dp"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:src="@drawable/calendar"-->
+                <!--android:layout_marginRight="30dp"/>-->
             </RelativeLayout>
 
             <TextView
@@ -135,6 +135,7 @@
                 android:background="@color/ColorNavBar"
                 android:fontFamily="@font/thaisansneue_bold"
                 android:text="บันทึกข้อมูล"
+                android:textColor="@color/white"
                 android:textSize="25dp" />
         </LinearLayout>
     </ScrollView>
