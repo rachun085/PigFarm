@@ -36,7 +36,7 @@ public class LoginActivity extends Activity {
     private static final int REFRESH_SCREEN = 1;
     String username,password,url;
     Button btnSubmit;
-    TextView txtUsername,txtPassword;
+    TextView txtUsername,txtPassword,linkregis;
 
 
     @Override
@@ -49,8 +49,15 @@ public class LoginActivity extends Activity {
         btnSubmit =findViewById(R.id.btnSubmit);
         progresslogin = findViewById(R.id.progressLogin);
         progresslogin.setVisibility(View.INVISIBLE);
+        linkregis = findViewById(R.id.linkregis);
 
-
+        linkregis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(LoginActivity.this, Register.class);
+                startActivity(intent2);
+            }
+        });
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,8 +90,8 @@ public class LoginActivity extends Activity {
         });
     }
 
-    public void login(final String username, final String password){
 
+    public void login(final String username, final String password){
         url = "http://pigaboo.xyz/login2.php?username="+username+"&password="+password;
         Log.i("Hiteshurl",""+url);
         RequestQueue requestQueue = Volley.newRequestQueue(LoginActivity.this);

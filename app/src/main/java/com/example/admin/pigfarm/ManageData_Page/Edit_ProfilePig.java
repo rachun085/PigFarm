@@ -140,8 +140,8 @@ public class Edit_ProfilePig extends Fragment {
                 edit_gene.setText(pig_breed);
                 edit_dadNo.setText(pig_idbreeder);
                 edit_momNo.setText(pig_idbreeder2);
-                edit_location.setText(pig_idreserve);
-                edit_spareID.setText(pig_from);
+                edit_location.setText(pig_from);
+                edit_spareID.setText(pig_idreserve);
                 if(pig_preglist.isEmpty()){
                     txt_preglist.setVisibility(View.INVISIBLE);
                     edit_preglist.setVisibility(View.INVISIBLE);
@@ -156,7 +156,7 @@ public class Edit_ProfilePig extends Fragment {
                 @Override
                 public void onClick(View view) {
                     GetDataFromEditText();
-                    update_data(getpigno,getpigid,pig_recorddate,pig_birthday,pig_breed,pig_idbreeder,pig_idbreeder2,pig_from,pig_idreserve);
+                    update_data(getpigno,getpigid,pig_preglist,pig_recorddate,pig_birthday,pig_breed,pig_idbreeder,pig_idbreeder2,pig_from,pig_idreserve);
                 }
             });
 
@@ -168,6 +168,7 @@ public class Edit_ProfilePig extends Fragment {
 
     private void GetDataFromEditText(){
         getpigid = edit_earID.getText().toString();
+        pig_preglist = edit_preglist.getText().toString();
         pig_recorddate = edit_new.getText().toString();
         pig_birthday = edit_bd.getText().toString();
         pig_breed = edit_gene.getText().toString();
@@ -178,7 +179,7 @@ public class Edit_ProfilePig extends Fragment {
     }
 
 
-    private void update_data (String pig_no, String pig_id, String pig_recorddate, String pig_birthday, String pig_breed, String pig_idbreeder, String pig_idbreeder2, String pig_from, String pig_idreserve){
+    private void update_data (String pig_no, String pig_id,  String pig_preglist , String pig_recorddate,String pig_birthday, String pig_breed, String pig_idbreeder, String pig_idbreeder2, String pig_from, String pig_idreserve){
         class update_dataClass extends AsyncTask<String,Void,String>{
 
             @Override
@@ -201,13 +202,14 @@ public class Edit_ProfilePig extends Fragment {
                 HashMap<String,String> hashMap = new HashMap<>();
                 hashMap.put("getpigno",params[0]);
                 hashMap.put("edit_earID",params[1]);
-                hashMap.put("edit_new",params[2]);
-                hashMap.put("edit_bd",params[3]);
-                hashMap.put("edit_gene",params[4]);
-                hashMap.put("edit_dadNo",params[5]);
-                hashMap.put("edit_momNo",params[6]);
-                hashMap.put("edit_location",params[7]);
-                hashMap.put("edit_spareID",params[8]);
+                hashMap.put("edit_preglist",params[2]);
+                hashMap.put("edit_new",params[3]);
+                hashMap.put("edit_bd",params[4]);
+                hashMap.put("edit_gene",params[5]);
+                hashMap.put("edit_dadNo",params[6]);
+                hashMap.put("edit_momNo",params[7]);
+                hashMap.put("edit_location",params[8]);
+                hashMap.put("edit_spareID",params[9]);
 
                 finalResult = httpParse.postRequest(hashMap,UpdateURL);
                 return finalResult;
@@ -215,7 +217,7 @@ public class Edit_ProfilePig extends Fragment {
         }
 
         update_dataClass update_dataclass = new update_dataClass();
-        update_dataclass.execute(pig_no,pig_id,pig_recorddate,pig_birthday,pig_breed,pig_idbreeder,pig_idbreeder2,pig_from,pig_idreserve);
+        update_dataclass.execute(pig_no,pig_id,pig_preglist,pig_recorddate,pig_birthday,pig_breed,pig_idbreeder,pig_idbreeder2,pig_from,pig_idreserve);
 
     }
 
