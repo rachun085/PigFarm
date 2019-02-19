@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
 
-import com.example.R;
+import com.example.admin.R;
 
 public class CheckScreen extends AppCompatActivity {
 

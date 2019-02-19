@@ -24,7 +24,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.R;
+import com.example.admin.R;
 import com.example.admin.pigfarm.SelectDateFragment;
 
 import java.io.IOException;
@@ -144,7 +144,6 @@ public class Newpig_Fragment extends Fragment {
             if (result != null){
                 Toast.makeText(getActivity(), "บันทึกข้อมูลเรียบร้อยแล้ว",Toast.LENGTH_SHORT).show();
                 edit_id.setText("");
-                edit_opendate.setText("");
                 edit_birthday.setText("");
                 edit_breed.setText("");
                 edit_dadId.setText("");

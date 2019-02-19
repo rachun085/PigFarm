@@ -9,8 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.R;
-
+import com.example.admin.R;
 import java.util.List;
 
 import static android.support.constraint.Constraints.TAG;

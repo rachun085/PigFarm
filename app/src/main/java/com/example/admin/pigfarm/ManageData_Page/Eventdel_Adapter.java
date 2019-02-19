@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
-import com.example.R;
+import com.example.admin.R;
 
 import java.util.List;
 

@@ -10,4 +10,7 @@
     <color name="ColorShow">#F76196</color>
     <color name="ColorSpinner">#ff7fac</color>
     <color name="Colorfont">#000</color>
+    <color name="ColorBG">#FFFFFF</color>
+    <color name="ColorBox">#EFEFEF</color>
+
 </resources>

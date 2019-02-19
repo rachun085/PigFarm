@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.R;
+import com.example.admin.R;
 
 
 public class LostID_Fragment extends Fragment {

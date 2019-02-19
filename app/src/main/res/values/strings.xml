@@ -15,22 +15,6 @@
         <item>คัดทิ้ง</item>
         <item>น้ำหนักพ่อแม่</item>
         <item>หมายเหตุ</item>
-    </string-array>
-
-    <string-array name="checkpreg">
-        <item>ท้อง</item>
-        <item>ไม่ท้อง</item>
-    </string-array>
-
-    <string-array name="exclude_event">
-        <item>ขาย</item>
-        <item>ตาย</item>
-        <item>ทำลาย</item>
-        <item>ย้าย</item>
-        <item>ไม่ทราบ</item>
-    </string-array>
-
-    <string-array name="eiei">
         <item>ลูกหมูตาย</item>
         <item>ให้ชื่อบริเวณ</item>
         <item>เบอร์หาย</item>
@@ -42,6 +26,39 @@
         <item>ได้รับยารักษา</item>
         <item>ป่วยเป็นโรค</item>
     </string-array>
+
+    <string-array name="checkpreg">
+        <item>ท้อง</item>
+        <item>ไม่ท้อง</item>
+    </string-array>
+
+
+    <string-array name="exclude_event">
+        <item>ขาย</item>
+        <item>ตาย</item>
+        <item>ทำลาย</item>
+        <item>ย้าย</item>
+        <item>ไม่ทราบ</item>
+    </string-array>
+
+    <string-array name="type_of_report">
+        <item>ทั้งหมด</item>
+        <item>หมูสาวยังไม่ได้ผสม</item>
+        <item>ผสม</item>
+        <item>ไม่ท้อง</item>
+        <item>กำหนดเข้าคลอด</item>
+        <item>ต้องทำก่อนเข้าคลอด</item>
+        <item>คลอด</item>
+        <item>หย่านท</item>
+        <item>แม่ต้องทำวัคซีน</item>
+    </string-array>
+
+    <string-array name="choice">
+        <item>ต้องการ</item>
+        <item>ไม่ต้องการ</item>
+    </string-array>
+
+
     <string name="title_activity_test_view_pager">TestViewPager</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>

@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.R;
+import com.example.admin.R;
 
 public class Event_main extends AppCompatActivity {
     Spinner event_spinner;
@@ -82,7 +82,7 @@ public class Event_main extends AppCompatActivity {
                 if (String.valueOf(event_spinner.getSelectedItem()).equals("ผสมพันธุ์")){
                     String textbreed = event_spinner.getSelectedItem().toString();
                     Bundle bundle = new Bundle();
-                    Breed_Fragment breed_fragment = new Breed_Fragment();
+                    Breed_Fragment breed_fragment = new Breed_Fragment();  //ผสมพันธุ์
                     bundle.putString("textbreed", textbreed);
                     bundle.putString("farm_id", getfarm_id);
                     breed_fragment.setArguments(bundle);
@@ -95,7 +95,7 @@ public class Event_main extends AppCompatActivity {
                 else if (String.valueOf(event_spinner.getSelectedItem()).equals("ตรวจท้อง")){
                     String textbreed = event_spinner.getSelectedItem().toString();
                     Bundle bundle = new Bundle();
-                    CheckPregnant_Fragment checkpregnant_fragment = new CheckPregnant_Fragment();
+                    CheckPregnant_Fragment checkpregnant_fragment = new CheckPregnant_Fragment(); //ตรวจท้อง
                     bundle.putString("textbreed", textbreed);
                     bundle.putString("farm_id", getfarm_id);
                     checkpregnant_fragment.setArguments(bundle);
@@ -108,7 +108,7 @@ public class Event_main extends AppCompatActivity {
                 else if (String.valueOf(event_spinner.getSelectedItem()).equals("แท้ง")){
                     String textbreed = event_spinner.getSelectedItem().toString();
                     Bundle bundle = new Bundle();
-                    Pregnent_Fragment pregnant_fragment = new Pregnent_Fragment();
+                    Pregnent_Fragment pregnant_fragment = new Pregnent_Fragment(); //แท้ง
                     bundle.putString("textbreed", textbreed);
                     bundle.putString("farm_id", getfarm_id);
                     pregnant_fragment.setArguments(bundle);
@@ -209,7 +209,7 @@ public class Event_main extends AppCompatActivity {
                     transaction.commit();
                 }
 
-                /*else if (String.valueOf(event_spinner.getSelectedItem()).equals("ลูกหมูตาย")){
+                else if (String.valueOf(event_spinner.getSelectedItem()).equals("ลูกหมูตาย")){
                     String textbreed = event_spinner.getSelectedItem().toString();
                     Bundle bundle = new Bundle();
                     Piggydead_Fragment piggydead_fragment = new Piggydead_Fragment();
@@ -328,7 +328,7 @@ public class Event_main extends AppCompatActivity {
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.content_event, getsick_fragment);
                     transaction.commit();
-                }*/
+                }
 
             }
 

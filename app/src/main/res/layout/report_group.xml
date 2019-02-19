@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="@color/ColorBG"
+    >
+
+    <!--StartNavBar-->
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_report_a1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        card_view:cardBackgroundColor="@color/ColorNavBar">
+
+        <TextView
+            android:id="@+id/txt_report_a1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/thaisansneue_bold"
+            android:gravity="center"
+            android:text="การจัดการกลุ่มสุกร"
+            android:layout_marginTop="3dp"
+            android:textColor="#ffffff"
+            android:textSize="28sp" />
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_marginTop="7dp"
+            android:layout_width="25dp"
+            android:layout_height="28dp"
+            android:src="@drawable/back"
+            android:layout_gravity="left"
+            android:onClick="onBackClick"
+            android:layout_marginLeft="15dp"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_show"
+        android:layout_below="@+id/card_report_a1"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        card_view:cardBackgroundColor="@color/ColorShow">
+
+        <TextView
+            android:fontFamily="@font/thaisansneue_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ฟาร์ม:"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/thaisansneue_bold"
+            android:text="ยูนิต:"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/txt_farm"
+            android:fontFamily="@font/thaisansneue_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5555"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="110dp"/>
+
+        <TextView
+            android:id="@+id/txt_unit"
+            android:fontFamily="@font/thaisansneue_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6666"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="270dp"/>
+
+    </android.support.v7.widget.CardView>
+    <!--endNavBar-->
+
+    <ScrollView android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/card_show"
+        android:background="@color/ColorBG"
+        android:id="@+id/scrollView">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txt_spinA1_1"
+            android:text="ชนิดรายงาน"
+            android:textColor="@color/Colorfont"
+            android:textSize="20sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/thaisansneue_bold"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/ColorBox">
+
+            <Spinner
+                android:id="@+id/spin_type_of_report"
+                android:layout_width="344dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:spinnerMode="dropdown" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/txt_A1_2"
+            android:text="ความยาวช่วงเวลา"
+            android:textColor="@color/Colorfont"
+            android:textSize="20sp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/thaisansneue_bold"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="377dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+
+            <EditText
+                android:id="@+id/edt_lengthtime"
+                android:layout_width="342dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/Colorfont"
+                android:inputType="number"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="235dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/ColorBox">
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_A1_4"
+            android:layout_marginTop="25dp"
+            android:text="ตรวจท้องกี่วันหลังผสม"
+            android:textColor="@color/Colorfont"
+            android:textSize="20sp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/thaisansneue_bold"/>
+
+        <EditText
+            android:id="@+id/edt_checkpregnant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:backgroundTint="@color/Colorfont"
+            android:inputType="number"
+            android:textColor="@color/Colorfont"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_A1_5"
+            android:layout_marginTop="25dp"
+            android:text="รายงานก่อนแม่เข้าคลอด"
+            android:textColor="@color/Colorfont"
+            android:textSize="20sp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/thaisansneue_bold"/>
+
+        <EditText
+            android:id="@+id/edt_reportmom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:backgroundTint="@color/Colorfont"
+            android:textColor="@color/Colorfont"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/txt_A1_6"
+            android:layout_marginTop="25dp"
+            android:text="พิมพ์สถานที่แม่หมูอยู่"
+            android:textColor="@color/Colorfont"
+            android:textSize="20sp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/thaisansneue_bold"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@color/ColorBox"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            >
+
+            <Spinner
+                android:id="@+id/spin_place_mom"
+                android:layout_width="325dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:spinnerMode="dropdown" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@color/ColorBox"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            >
+
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/btn_submit_report"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@color/ColorNavBar"
+            android:fontFamily="@font/thaisansneue_bold"
+            android:text="รายงาน"
+            android:textColor="@color/white"
+            android:layout_marginBottom="50dp"
+            android:textSize="25dp" />
+
+    </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>
+
+

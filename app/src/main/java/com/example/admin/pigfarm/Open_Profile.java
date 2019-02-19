@@ -16,7 +16,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.R;
+import com.example.admin.R;
 
 public class Open_Profile extends AppCompatActivity {
 

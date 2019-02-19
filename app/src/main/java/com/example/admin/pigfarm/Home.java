@@ -1,14 +1,11 @@
 package com.example.admin.pigfarm;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.DownloadManager;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -16,50 +13,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.R;
+import com.example.admin.R;
 import com.example.admin.pigfarm.ManageData_Page.MainActivity_ManageData;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import com.example.admin.pigfarm.Report.PigData_Report;
+import com.example.admin.pigfarm.Report.Report_Home;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 
 public class Home extends AppCompatActivity{
 
-    ImageButton img_logout;
     TextView txt_user, txt_farm, txt_unit;
-    CardView card_setting, card_profile, card_event, card_about, card_data;
-    String farm_owner ="";
-    String farm_name = "";
-    String farm_id = "";
-    String unit_name = "";
-    String username = "";
-    String password = "";
+    CardView card_setting, card_profile, card_event, card_report, card_data;
+    String farm_owner,farm_name,farm_id,unit_name,username,password  = "";
     private SwipeRefreshLayout mSwipeRefresh;
 
     @Override
@@ -87,7 +64,6 @@ public class Home extends AppCompatActivity{
             @Override
             public void onResponse(String response) {
                 showJSON(response);
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -129,7 +105,7 @@ public class Home extends AppCompatActivity{
                     card_profile = findViewById(R.id.card_profile);
                     card_event = findViewById(R.id.card_event);
                     card_data = findViewById(R.id.card_data);
-                    card_about = findViewById(R.id.card_about);
+                    card_report = findViewById(R.id.card_report);
 
 
 
@@ -165,20 +141,14 @@ public class Home extends AppCompatActivity{
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(Home.this, MainActivity_ManageData.class);
-                            SharedPreferences farm = getSharedPreferences("Farm", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor editor2 = farm.edit();
-                            editor2.putString("farm_name",farm_name);
-                            editor2.putString("unit_name",unit_name);
-                            editor2.putString("farm_id",farm_id);
-                            editor2.commit();
                             startActivity(intent);
                         }
                     });
 
-                    card_about.setOnClickListener(new View.OnClickListener() {
+                    card_report.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intent = new Intent(Home.this, about_activity.class);
+                            Intent intent = new Intent(Home.this, Report_Home.class);
                             startActivity(intent);
                         }
                     });

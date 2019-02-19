@@ -21,7 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.R;
+import com.example.admin.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -130,6 +130,11 @@ public class DelEvent_Fragment extends android.support.v4.app.Fragment implement
         }
     }
 
+    @Override
+    public void OnDeleteClick(int position) {
+        removeItem(position);
+    }
+
     public void removeItem(final int position){
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.Theme_AppCompat_DayNight_Dialog_Alert);
         builder.setCancelable(true);
@@ -155,16 +160,6 @@ public class DelEvent_Fragment extends android.support.v4.app.Fragment implement
 
     }
 
-    public void confirmdelete(int position){
-        delList.remove(position);
-        eventdel_adapter.notifyItemRemoved(position);
-    }
-
-    @Override
-    public void OnDeleteClick(int position) {
-        removeItem(position);
-    }
-
     public void EventDelete(final String event_id){
         class EventDeleteClass extends AsyncTask<String,Void,String>{
 
@@ -172,15 +167,6 @@ public class DelEvent_Fragment extends android.support.v4.app.Fragment implement
             protected void onPreExecute() {
                 super.onPreExecute();
                 progressDialog2 = ProgressDialog.show(getActivity(), "กำลังลบ...",null,true,true);
-            }
-
-            @Override
-            protected void onPostExecute(String httpResponseMsg) {
-                super.onPostExecute(httpResponseMsg);
-
-                progressDialog2.dismiss();
-                Toast.makeText(getActivity(), httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
-
             }
 
             @Override
@@ -192,12 +178,26 @@ public class DelEvent_Fragment extends android.support.v4.app.Fragment implement
                 return finalResult;
 
             }
+
+            @Override
+            protected void onPostExecute(String httpResponseMsg) {
+                super.onPostExecute(httpResponseMsg);
+
+                progressDialog2.dismiss();
+                Toast.makeText(getActivity(), httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
+            }
+
         }
         EventDeleteClass eventDeleteClass = new EventDeleteClass();
         eventDeleteClass.execute(event_id);
-
     }
 
+
+
+    public void confirmdelete(int position){
+        delList.remove(position);
+        eventdel_adapter.notifyItemRemoved(position);
+    }
 
 }
 

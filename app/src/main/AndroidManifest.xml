@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example">
-
-
+    package="com.example.admin">
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".admin.pigfarm.CheckScreen"
+            android:name=".pigfarm.CheckScreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,21 +19,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".admin.pigfarm.Home"
+            android:name=".pigfarm.Home"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".admin.pigfarm.Open_Profile"
+            android:name=".pigfarm.Open_Profile"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".admin.pigfarm.LoginActivity"
+            android:name=".pigfarm.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".admin.pigfarm.Event_main"
+            android:name=".pigfarm.Event_main"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".admin.pigfarm.ManageData_Page.MainActivity_ManageData"/>
-        <activity android:name=".admin.pigfarm.about_activity"></activity>
-        <activity android:name=".admin.pigfarm.Register"/>
+        <activity android:name=".pigfarm.ManageData_Page.MainActivity_ManageData"/>
+        <activity android:name=".pigfarm.about_activity"></activity>
+        <activity android:name=".pigfarm.Register"/>
+        <activity android:name=".pigfarm.Report.Report_Home"/>
+        <activity android:name=".pigfarm.Report.Report_Group"/>
+        <activity android:name=".pigfarm.Report.PigData_Report"/>
     </application>
 
 </manifest>

@@ -24,7 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.R;
+import com.example.admin.R;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -190,14 +190,6 @@ public class Edit_ProfilePig extends Fragment {
             }
 
             @Override
-            protected void onPostExecute(String httpResponseMsg) {
-                super.onPostExecute(httpResponseMsg);
-                progressDialog.dismiss();
-                Toast.makeText(getActivity(),httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
-
-            }
-
-            @Override
             protected String doInBackground(String... params) {
                 HashMap<String,String> hashMap = new HashMap<>();
                 hashMap.put("getpigno",params[0]);
@@ -213,6 +205,14 @@ public class Edit_ProfilePig extends Fragment {
 
                 finalResult = httpParse.postRequest(hashMap,UpdateURL);
                 return finalResult;
+            }
+
+            @Override
+            protected void onPostExecute(String httpResponseMsg) {
+                super.onPostExecute(httpResponseMsg);
+                progressDialog.dismiss();
+                Toast.makeText(getActivity(),httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
+
             }
         }
 

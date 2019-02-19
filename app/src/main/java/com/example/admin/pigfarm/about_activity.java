@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.example.R;
+import com.example.admin.R;
 
 public class about_activity extends AppCompatActivity {
 

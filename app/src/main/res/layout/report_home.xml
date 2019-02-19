@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="@color/ColorBackground">
+
+
+    <!--StartNavBar-->
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_report_a"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        card_view:cardBackgroundColor="@color/ColorNavBar">
+
+        <TextView
+            android:id="@+id/txt_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/thaisansneue_bold"
+            android:gravity="center"
+            android:text="สถานภาพพ่อแม่พันธุ์"
+            android:layout_marginTop="3dp"
+            android:textColor="#ffffff"
+            android:textSize="28sp" />
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_marginTop="7dp"
+            android:layout_width="25dp"
+            android:layout_height="28dp"
+            android:src="@drawable/back"
+            android:layout_gravity="left"
+            android:onClick="onBackClick"
+            android:layout_marginLeft="15dp"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_show"
+        android:layout_below="@+id/card_report_a"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        card_view:cardBackgroundColor="@color/ColorShow">
+
+        <TextView
+            android:fontFamily="@font/thaisansneue_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ฟาร์ม:"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/thaisansneue_bold"
+            android:text="ยูนิต:"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/txt_farm"
+            android:fontFamily="@font/thaisansneue_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5555"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="110dp"/>
+
+        <TextView
+            android:id="@+id/txt_unit"
+            android:fontFamily="@font/thaisansneue_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6666"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="270dp"/>
+
+    </android.support.v7.widget.CardView>
+    <!--endNavBar-->
+
+    <ScrollView android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card_show"
+        android:id="@+id/scrollView">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_groupmanage"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/ColorBackground"
+                card_view:cardBackgroundColor="#ffff">
+
+                <ImageView
+                    android:id="@+id/img_a1"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/info" />
+
+                <TextView
+                    android:id="@+id/txt_IDa1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card_about"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/thaisansneue_bold"
+                    android:text="การจัดการกลุ่มสุกร"
+                    android:textColor="#808080"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/img_arw1"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="35dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/arow_right" />
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_foodmanage"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/ColorBackground"
+                card_view:cardBackgroundColor="#ffff">
+
+                <ImageView
+                    android:id="@+id/img_a2"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/info" />
+
+                <TextView
+                    android:id="@+id/txt_a2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card_about"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/thaisansneue_bold"
+                    android:text="การจัดการอาหาร"
+                    android:textColor="#808080"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/img_arw2"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="35dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/arow_right" />
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_status_of_dadmom"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/ColorBackground"
+                card_view:cardBackgroundColor="#ffff">
+
+                <ImageView
+                    android:id="@+id/img_a3"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/info" />
+
+                <TextView
+                    android:id="@+id/txt_a3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card_about"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/thaisansneue_bold"
+                    android:text="สถานภาพพ่อแม่พันธุ์"
+                    android:textColor="#808080"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/img_arw3"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="35dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/arow_right" />
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_history_of_dadmom"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/ColorBackground"
+                card_view:cardBackgroundColor="#ffff">
+
+                <ImageView
+                    android:id="@+id/img_a4"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/info" />
+
+                <TextView
+                    android:id="@+id/txt_IDa4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card_about"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/thaisansneue_bold"
+                    android:text="ประวัติพ่อแม่พันธุ์"
+                    android:textColor="#808080"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/img_nut"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="35dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/arow_right" />
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
+
+
