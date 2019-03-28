@@ -1,6 +1,7 @@
 package com.example.admin.pigfarm;
 
 
+import android.app.DatePickerDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +33,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -47,6 +51,8 @@ public class Weight_Fragment extends Fragment {
     Spinner spin_noteId09;
     EditText edit_dateNote09, edit_weight09;
     Button btn_flacAct09;
+    ImageView img_calNote09;
+    Calendar myCalendar = Calendar.getInstance();
 
 
     public Weight_Fragment() {
@@ -72,6 +78,7 @@ public class Weight_Fragment extends Fragment {
         edit_dateNote09 = getView().findViewById(R.id.edit_dateNote09);
         edit_weight09 = getView().findViewById(R.id.edit_weight09);
         btn_flacAct09 = getView().findViewById(R.id.btn_flacAct09);
+        img_calNote09 = getView().findViewById(R.id.img_calNote09);
 
         String date_n = new SimpleDateFormat("yyyy/MM/dd",
                 Locale.getDefault()).format(new Date());
@@ -99,7 +106,31 @@ public class Weight_Fragment extends Fragment {
                 new InsertAsyn().execute("http://pigaboo.xyz/Insert_EventWeight.php");
             }
         });
+
+        img_calNote09.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog();
+            }
+        });
     }
+
+    public void showDatePickerDialog(){
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            monthOfYear = monthOfYear + 1;
+            edit_dateNote09.setText(year+"/"+monthOfYear+"/"+dayOfMonth);
+        }
+    };
 
     private class InsertAsyn extends AsyncTask<String, Void, String> {
         @Override
@@ -107,7 +138,7 @@ public class Weight_Fragment extends Fragment {
             try{
                 OkHttpClient _okHttpClient = new OkHttpClient();
                 RequestBody _requestBody = new FormBody.Builder()
-                        .add("event_name", gettextbreed)
+                        .add("event_id", "9")
                         .add("event_recorddate", edit_dateNote09.getText().toString())
                         .add("pig_id", spin_noteId09.getSelectedItem().toString())
                         .add("pig_weightdadmomofweight", edit_weight09.getText().toString())

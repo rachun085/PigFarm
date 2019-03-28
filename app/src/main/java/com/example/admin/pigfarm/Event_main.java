@@ -183,18 +183,6 @@ public class Event_main extends AppCompatActivity {
                     transaction.commit();
                 }
 
-                else if (String.valueOf(event_spinner.getSelectedItem()).equals("น้ำหนักพ่อแม่")){
-                    String textbreed = event_spinner.getSelectedItem().toString();
-                    Bundle bundle = new Bundle();
-                    Weight_Fragment weight_fragment = new Weight_Fragment();
-                    bundle.putString("textbreed", textbreed);
-                    bundle.putString("farm_id", getfarm_id);
-                    weight_fragment.setArguments(bundle);
-
-                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.content_event, weight_fragment);
-                    transaction.commit();
-                }
 
                 else if (String.valueOf(event_spinner.getSelectedItem()).equals("หมายเหตุ")){
                     String textbreed = event_spinner.getSelectedItem().toString();
@@ -214,6 +202,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Piggydead_Fragment piggydead_fragment = new Piggydead_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     piggydead_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -222,47 +211,12 @@ public class Event_main extends AppCompatActivity {
                 }
 
 
-                else if (String.valueOf(event_spinner.getSelectedItem()).equals("ให้ชื่อบริเวณ")){
-                    String textbreed = event_spinner.getSelectedItem().toString();
-                    Bundle bundle = new Bundle();
-                    Areaname_Fragment areaname_fragment = new Areaname_Fragment();
-                    bundle.putString("textbreed", textbreed);
-                    areaname_fragment.setArguments(bundle);
-
-                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.content_event, areaname_fragment);
-                    transaction.commit();
-                }
-
-                else if (String.valueOf(event_spinner.getSelectedItem()).equals("เบอร์หาย")){
-                    String textbreed = event_spinner.getSelectedItem().toString();
-                    Bundle bundle = new Bundle();
-                    LostID_Fragment lostID_fragment = new LostID_Fragment();
-                    bundle.putString("textbreed", textbreed);
-                    lostID_fragment.setArguments(bundle);
-
-                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.content_event, lostID_fragment);
-                    transaction.commit();
-                }
-
-                else if (String.valueOf(event_spinner.getSelectedItem()).equals("ตั้งชื่อคอก")){
-                    String textbreed = event_spinner.getSelectedItem().toString();
-                    Bundle bundle = new Bundle();
-                    StallName_Fragment stallName_fragment = new StallName_Fragment();
-                    bundle.putString("textbreed", textbreed);
-                    stallName_fragment.setArguments(bundle);
-
-                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.content_event, stallName_fragment);
-                    transaction.commit();
-                }
-
-                else if (String.valueOf(event_spinner.getSelectedItem()).equals("เป็นสดแต่ไม่ผสมพันะุ์")){
+                else if (String.valueOf(event_spinner.getSelectedItem()).equals("เป็นสัดแต่ไม่ผสมพันธุ์")){
                     String textbreed = event_spinner.getSelectedItem().toString();
                     Bundle bundle = new Bundle();
                     Rutnotbreeded_Fragment rutnotbreeded_fragment = new Rutnotbreeded_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     rutnotbreeded_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -275,6 +229,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Blightedovum_Fragment blightedovum_fragment = new Blightedovum_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     blightedovum_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -287,22 +242,11 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Wean2_Fragment wean2_fragment = new Wean2_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     wean2_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.content_event, wean2_fragment);
-                    transaction.commit();
-                }
-
-               else if (String.valueOf(event_spinner.getSelectedItem()).equals("ชื่อกลุ่มผสมพันธุ์")){
-                    String textbreed = event_spinner.getSelectedItem().toString();
-                    Bundle bundle = new Bundle();
-                    Breedgroup_Fragment breedgroup_fragment = new Breedgroup_Fragment();
-                    bundle.putString("textbreed", textbreed);
-                    breedgroup_fragment.setArguments(bundle);
-
-                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.content_event, breedgroup_fragment);
                     transaction.commit();
                 }
 
@@ -311,6 +255,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Treat_Fragment treat_fragment = new Treat_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     treat_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -323,6 +268,7 @@ public class Event_main extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     Getsick_Fragment getsick_fragment = new Getsick_Fragment();
                     bundle.putString("textbreed", textbreed);
+                    bundle.putString("farm_id", getfarm_id);
                     getsick_fragment.setArguments(bundle);
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

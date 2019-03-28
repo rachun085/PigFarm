@@ -31,12 +31,18 @@
             android:name=".pigfarm.Event_main"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".pigfarm.ManageData_Page.MainActivity_ManageData"/>
-        <activity android:name=".pigfarm.about_activity"></activity>
-        <activity android:name=".pigfarm.Register"/>
-        <activity android:name=".pigfarm.Report.Report_Home"/>
-        <activity android:name=".pigfarm.Report.Report_Group"/>
-        <activity android:name=".pigfarm.Report.PigData_Report"/>
+        <activity android:name=".pigfarm.ManageData_Page.MainActivity_ManageData"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".pigfarm.about_activity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".pigfarm.Register"
+            android:screenOrientation="portrait" />
+        <activity android:name=".pigfarm.Report.Report_Home"
+            android:screenOrientation="portrait" />
+        <activity android:name=".pigfarm.Report.Report_Group"
+            android:screenOrientation="portrait" />
+        <activity android:name=".pigfarm.Report.PigData_Report"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -15,7 +15,7 @@ import com.example.admin.R;
 
 
 public class Areaname_Fragment extends Fragment {
-
+    public static String gettextbreed,farm_id;
 
     public Areaname_Fragment() {
         // Required empty public constructor
@@ -32,7 +32,8 @@ public class Areaname_Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         if (getArguments() != null){
-            String gettextbreed = getArguments().getString("textbreed");
+            gettextbreed = getArguments().getString("textbreed");
+            farm_id = getArguments().getString("farm_id");
             Toast.makeText(getActivity(), gettextbreed, Toast.LENGTH_SHORT).show();
         }
     }

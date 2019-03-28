@@ -1,6 +1,7 @@
 package com.example.admin.pigfarm;
 
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -12,7 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +23,7 @@ import com.example.admin.R;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -33,6 +37,10 @@ public class Newbredder_Fragment extends Fragment {
     EditText edit_id3, edit_opendate3, edit_birthday3, edit_breed3, edit_dadId3, edit_momId3, edit_form3, edit_reserveID3;
     Button btn_saveBio3;
     String farm_id;
+    ImageView img_calOpen3, img_calBD3;
+    Calendar myCalendar = Calendar.getInstance();
+    Calendar myCalendar2 = Calendar.getInstance();
+
 
 
     public Newbredder_Fragment() {
@@ -66,13 +74,63 @@ public class Newbredder_Fragment extends Fragment {
         edit_form3 = getView().findViewById(R.id.edit_form3);
         edit_reserveID3 = getView().findViewById(R.id.edit_reserveID3);
         btn_saveBio3 = getView().findViewById(R.id.btn_saveBio3);
+        img_calOpen3 = getView().findViewById(R.id.img_calOpen3);
+        img_calBD3 = getView().findViewById(R.id.img_calBD3);
 
-        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+        String date_n = new SimpleDateFormat("yyyy-MM-dd",
                 Locale.getDefault()).format(new Date());
         edit_opendate3.setText(date_n);
 
         btn_saveBio3.setOnClickListener(onSubmitClickListener);
+
+        img_calOpen3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
+
+        img_calBD3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog2();
+            }
+        });
     }
+
+    public void showDatePickerDialog(){
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            monthOfYear = monthOfYear + 1;
+            edit_opendate3.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
+        }
+    };
+
+    public void showDatePickerDialog2(){
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), date2, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
+    DatePickerDialog.OnDateSetListener date2 = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            myCalendar2.set(Calendar.YEAR, year);
+            myCalendar2.set(Calendar.MONTH, monthOfYear);
+            myCalendar2.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            monthOfYear = monthOfYear + 1;
+            edit_birthday3.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
+        }
+    };
 
     private View.OnClickListener onSubmitClickListener = new View.OnClickListener() {
         @Override

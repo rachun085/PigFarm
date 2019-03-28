@@ -337,7 +337,7 @@
                                         android:fontFamily="@font/thaisansneue_bold"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="เพิ่มผู้ใช้งาน"
+                                        android:text="ตั้งค่า"
                                         android:textColor="#000000"
                                         android:gravity="center"
                                         android:layout_gravity="bottom"

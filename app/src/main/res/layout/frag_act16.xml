@@ -113,6 +113,7 @@
                 android:layout_marginTop="50dp"
                 android:background="@color/ColorNavBar"
                 android:fontFamily="@font/thaisansneue_bold"
+                android:textColor="@color/white"
                 android:text="บันทึกข้อมูล"
                 android:textSize="25dp" />
         </LinearLayout>

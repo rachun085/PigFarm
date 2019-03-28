@@ -75,13 +75,14 @@
                 android:textColor="@color/Colorfont"
                 android:backgroundTint="@color/Colorfont"/>
 
-            <!--<ImageView-->
-                <!--android:id="@+id/img_calNote05"-->
-                <!--android:layout_width="45dp"-->
-                <!--android:layout_height="45dp"-->
-                <!--android:layout_alignParentEnd="true"-->
-                <!--android:src="@drawable/calendar"-->
-                <!--android:layout_marginRight="30dp"/>-->
+                <ImageView
+                    android:id="@+id/img_calNote05"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/calendar" />
             </RelativeLayout>
 
             <TextView

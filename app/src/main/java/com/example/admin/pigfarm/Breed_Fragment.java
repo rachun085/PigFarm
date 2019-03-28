@@ -1,7 +1,11 @@
 package com.example.admin.pigfarm;
 
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,7 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +37,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -48,6 +55,8 @@ public class Breed_Fragment extends Fragment {
     ArrayList<String> listItems = new ArrayList<>();
     ArrayAdapter<String> adapter;
     public static String gettextbreed,farm_id;
+    ImageView img_calNote01;
+    Calendar myCalendar = Calendar.getInstance();
 
     public Breed_Fragment() {
 
@@ -69,8 +78,9 @@ public class Breed_Fragment extends Fragment {
         edit_dateNote01 = getView().findViewById(R.id.edit_dateNote01);
         edit_dadIdAct01 = getView().findViewById(R.id.edit_dadIdAct01);
         btn_flacAct01 = getView().findViewById(R.id.btn_flacAct01);
+        img_calNote01 = getView().findViewById(R.id.img_calNote01);
 
-        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+        String date_n = new SimpleDateFormat("yyyy-MM-dd",
                 Locale.getDefault()).format(new Date());
         edit_dateNote01.setText(date_n);
 
@@ -104,7 +114,31 @@ public class Breed_Fragment extends Fragment {
             }
         });
 
+        img_calNote01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog();
+            }
+        });
+
     }
+
+    public void showDatePickerDialog(){
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            monthOfYear = monthOfYear + 1;
+            edit_dateNote01.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
+        }
+    };
 
     private class InsertAsyn extends AsyncTask<String, Void, String> {
         @Override
@@ -112,10 +146,11 @@ public class Breed_Fragment extends Fragment {
             try{
                 OkHttpClient _okHttpClient = new OkHttpClient();
                 RequestBody _requestBody = new FormBody.Builder()
-                        .add("event_name", gettextbreed)
+                        .add("event_id", "1")
                         .add("event_recorddate", edit_dateNote01.getText().toString())
                         .add("pig_id", spin_noteId01.getSelectedItem().toString())
                         .add("pig_breeder", edit_dadIdAct01.getText().toString())
+                        .add("pig_amount_breed", "1")
                         .build();
 
                 Request _request = new Request.Builder().url(strings[0]).post(_requestBody).build();
@@ -146,6 +181,20 @@ public class Breed_Fragment extends Fragment {
             JSONObject jsonObject = new JSONObject(response);
             JSONArray result = jsonObject.getJSONArray("result");
 
+            if (result.length() == 0) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.Theme_AppCompat_DayNight_Dialog_Alert);
+                builder.setCancelable(false);
+                builder.setMessage("ท่านยังไม่ได้เปิดประวัติสุกร");
+                builder.setNegativeButton("ตกลง", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
 
             for (int i = 0; i<result.length(); i++){
                 JSONObject collectData = result.getJSONObject(i);

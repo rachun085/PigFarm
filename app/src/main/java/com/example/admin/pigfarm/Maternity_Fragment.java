@@ -1,6 +1,9 @@
 package com.example.admin.pigfarm;
 
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,7 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +35,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -47,6 +53,8 @@ public class Maternity_Fragment extends Fragment {
     Spinner spin_noteId04;
     EditText edit_dateNote04, edit_live04, edit_die04, edit_baby04, edit_weight04;
     Button btn_flacAct04;
+    ImageView img_calNote04;
+    Calendar myCalendar = Calendar.getInstance();
 
     public Maternity_Fragment() {
     }
@@ -74,12 +82,13 @@ public class Maternity_Fragment extends Fragment {
         edit_baby04 = getView().findViewById(R.id.edit_baby04);
         edit_weight04 = getView().findViewById(R.id.edit_weight04);
         btn_flacAct04 = getView().findViewById(R.id.btn_flacAct04);
+        img_calNote04 = getView().findViewById(R.id.img_calNote04);
 
         String date_n = new SimpleDateFormat("yyyy/MM/dd",
                 Locale.getDefault()).format(new Date());
         edit_dateNote04.setText(date_n);
 
-        String url = "http://pigaboo.xyz/Query_pigid.php?farm_id="+farm_id;
+        String url = "http://pigaboo.xyz/Query_BreedID.php?farm_id="+farm_id;
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -101,6 +110,13 @@ public class Maternity_Fragment extends Fragment {
                 new InsertAsyn().execute("http://pigaboo.xyz/Insert_EventMaternity.php");
             }
         });
+
+        img_calNote04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog();
+            }
+        });
     }
 
     private class InsertAsyn extends AsyncTask<String, Void, String> {
@@ -109,13 +125,14 @@ public class Maternity_Fragment extends Fragment {
             try{
                 OkHttpClient _okHttpClient = new OkHttpClient();
                 RequestBody _requestBody = new FormBody.Builder()
-                        .add("event_name", gettextbreed)
+                        .add("event_id", "4")
                         .add("event_recorddate", edit_dateNote04.getText().toString())
                         .add("pig_id", spin_noteId04.getSelectedItem().toString())
                         .add("pig_alive", edit_live04.getText().toString())
                         .add("pig_die", edit_die04.getText().toString())
                         .add("pig_seedlings", edit_baby04.getText().toString())
                         .add("pig_allweight", edit_weight04.getText().toString())
+                        .add("pig_amount_pregnant", "1")
                         .build();
 
                 Request _request = new Request.Builder().url(strings[0]).post(_requestBody).build();
@@ -150,6 +167,21 @@ public class Maternity_Fragment extends Fragment {
             JSONObject jsonObject = new JSONObject(response);
             JSONArray result = jsonObject.getJSONArray("result");
 
+            if (result.length() == 0) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.Theme_AppCompat_DayNight_Dialog_Alert);
+                builder.setCancelable(false);
+                builder.setMessage("ยังไม่มีรายการบันทึกจากเหตุการณ์ผสมพันธุ์");
+                builder.setNegativeButton("ตกลง", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+
 
             for (int i = 0; i<result.length(); i++){
                 JSONObject collectData = result.getJSONObject(i);
@@ -163,6 +195,23 @@ public class Maternity_Fragment extends Fragment {
         adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_dropdown_item, listItems);
         spin_noteId04.setAdapter(adapter);
     }
+
+    public void showDatePickerDialog(){
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            monthOfYear = monthOfYear + 1;
+            edit_dateNote04.setText(year+"/"+monthOfYear+"/"+dayOfMonth);
+        }
+    };
 
     }
 

@@ -1,6 +1,7 @@
 package com.example.admin.pigfarm;
 
 
+import android.app.DatePickerDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +33,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -46,6 +50,8 @@ public class Entrustment_Fragment extends Fragment {
     Spinner spin_noteId05;
     EditText edit_dateNote05, edit_numbaby05;
     Button btn_flacAct05;
+    ImageView img_calNote05;
+    Calendar myCalendar = Calendar.getInstance();
 
 
     public Entrustment_Fragment() {
@@ -71,6 +77,8 @@ public class Entrustment_Fragment extends Fragment {
         edit_dateNote05 = getView().findViewById(R.id.edit_dateNote05);
         edit_numbaby05 = getView().findViewById(R.id.edit_numbaby05);
         btn_flacAct05 = getView().findViewById(R.id.btn_flacAct05);
+        img_calNote05 = getView().findViewById(R.id.img_calNote05);
+
 
         String date_n = new SimpleDateFormat("yyyy/MM/dd",
                 Locale.getDefault()).format(new Date());
@@ -99,7 +107,31 @@ public class Entrustment_Fragment extends Fragment {
                 new InsertAsyn().execute("http://pigaboo.xyz/Insert_EventEntrustment.php");
             }
         });
+
+        img_calNote05.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog();
+            }
+        });
     }
+
+    public void showDatePickerDialog(){
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            monthOfYear = monthOfYear + 1;
+            edit_dateNote05.setText(year+"/"+monthOfYear+"/"+dayOfMonth);
+        }
+    };
 
     private class InsertAsyn extends AsyncTask<String, Void, String> {
         @Override
@@ -107,7 +139,7 @@ public class Entrustment_Fragment extends Fragment {
             try{
                 OkHttpClient _okHttpClient = new OkHttpClient();
                 RequestBody _requestBody = new FormBody.Builder()
-                        .add("event_name", gettextbreed)
+                        .add("event_id", "5")
                         .add("event_recorddate", edit_dateNote05.getText().toString())
                         .add("pig_id", spin_noteId05.getSelectedItem().toString())
                         .add("pig_amountofentrustment", edit_numbaby05.getText().toString())

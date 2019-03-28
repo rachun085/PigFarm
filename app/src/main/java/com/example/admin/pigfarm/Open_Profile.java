@@ -26,6 +26,7 @@ public class Open_Profile extends AppCompatActivity {
     String getfarm_name2,getunit_name2,getfarm_id;
     ViewPager pager;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

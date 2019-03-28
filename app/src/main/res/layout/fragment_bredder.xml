@@ -55,22 +55,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/edit_opendate3"
-                    android:layout_width="325dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:textSize="20sp"
-                    android:textColor="@color/Colorfont"
-                    android:backgroundTint="@color/Colorfont"
-                    android:fontFamily="@font/thaisansneue_regular" />
-                    <!--<ImageView-->
-                        <!--android:id="@+id/img_calOpen3"-->
-                        <!--android:layout_width="45dp"-->
-                        <!--android:layout_height="45dp"-->
-                        <!--android:layout_alignParentEnd="true"-->
-                        <!--android:src="@drawable/calendar"-->
-                        <!--android:layout_marginRight="30dp"/>-->
+                    <EditText
+                        android:id="@+id/edit_opendate3"
+                        android:layout_width="290dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:backgroundTint="@color/Colorfont"
+                        android:fontFamily="@font/thaisansneue_regular"
+                        android:textColor="@color/Colorfont"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/img_calOpen3"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="35dp"
+                        android:src="@drawable/calendar" />
 
                 </RelativeLayout>
 
@@ -90,22 +92,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/edit_birthday3"
-                    android:layout_width="325dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/thaisansneue_regular"
-                    android:backgroundTint="@color/Colorfont"/>
+                    <EditText
+                        android:id="@+id/edit_birthday3"
+                        android:layout_width="290dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:backgroundTint="@color/Colorfont"
+                        android:fontFamily="@font/thaisansneue_regular"
+                        android:textSize="20sp" />
 
-                    <!--<ImageView-->
-                        <!--android:id="@+id/img_calBD3"-->
-                        <!--android:layout_width="45dp"-->
-                        <!--android:layout_height="45dp"-->
-                        <!--android:layout_alignParentEnd="true"-->
-                        <!--android:src="@drawable/calendar"-->
-                        <!--android:layout_marginRight="30dp"/>-->
+                    <ImageView
+                        android:id="@+id/img_calBD3"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="35dp"
+                        android:src="@drawable/calendar" />
 
                 </RelativeLayout>
 
@@ -221,6 +224,7 @@
                     android:layout_marginTop="50dp"
                     android:layout_gravity="center"
                     android:text="บันทึกข้อมูล"
+                    android:textColor="@color/white"
                     android:textSize="25dp"
                     android:fontFamily="@font/thaisansneue_bold"
                     android:background="@color/ColorNavBar"/>
