@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/ColorBackground">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/scroller"
@@ -56,7 +57,7 @@
                         android:layout_toRightOf="@id/img_pig"
                         android:fontFamily="@font/thaisansneue_bold"
                         android:gravity="center"
-                        android:text="A002"
+                        android:text="ไม่มีข้อมูล"
                         android:textColor="#000000"
                         android:textSize="20sp" />
 
@@ -81,7 +82,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/texttitle_recorddate"
                         android:fontFamily="@font/thaisansneue_regular"
-                        android:text="ใส่วันที่เปิดประวัติ"
+                        android:text="ไม่มีข้อมูล"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -105,7 +106,7 @@
                         android:layout_alignStart="@+id/text_recorddate"
                         android:layout_alignTop="@+id/texttitle_bd"
                         android:fontFamily="@font/thaisansneue_regular"
-                        android:text="ใส่วันเกิด"
+                        android:text="ไม่มีข้อมูล"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -129,7 +130,7 @@
                         android:layout_alignStart="@+id/text_recorddate"
                         android:layout_alignTop="@+id/texttitle_breed"
                         android:fontFamily="@font/thaisansneue_regular"
-                        android:text="ใส่สายพันธุ์"
+                        android:text="ไม่มีข้อมูล"
                         android:textColor="#00000A"
                         android:textSize="18sp" />
 
@@ -154,7 +155,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/texttitle_breeder"
                         android:fontFamily="@font/thaisansneue_regular"
-                        android:text="ใส่เบอร์พ่อ"
+                        android:text="ไม่มีข้อมูล"
                         android:textColor="#00000A"
                         android:textSize="18sp" />
 
@@ -179,7 +180,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/texttitle_bredder1"
                         android:fontFamily="@font/thaisansneue_regular"
-                        android:text="ใส่เบอร์แม่"
+                        android:text="ไม่มีข้อมูล"
                         android:textColor="#00000A"
                         android:textSize="18sp" />
 
@@ -204,7 +205,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/texttitle_from"
                         android:fontFamily="@font/thaisansneue_regular"
-                        android:text="ใส่แหล่งที่ได้"
+                        android:text="ไม่มีข้อมูล"
                         android:textColor="#00000A"
                         android:textSize="18sp" />
 
@@ -229,7 +230,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/texttitle_reserveid"
                         android:fontFamily="@font/thaisansneue_regular"
-                        android:text="ใส่เบอร์หูสำรอง"
+                        android:text="ไม่มีข้อมูล"
                         android:textColor="#00000A"
                         android:textSize="18sp" />
 
@@ -276,15 +277,16 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                     <ImageView
                         android:id="@+id/img_event"
                         android:layout_width="42dp"
                         android:layout_height="36dp"
-                        android:layout_marginTop="5dp"
                         android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
                         android:src="@drawable/protect" />
+
                     <ImageView
                         android:id="@+id/editevent"
                         android:layout_width="37dp"
@@ -307,14 +309,13 @@
                         android:textSize="20sp" />
 
                     <android.support.v7.widget.RecyclerView
-                        android:layout_marginTop="10dp"
                         android:id="@+id/recyclerview2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/txt_title2"
-                        android:clickable="true"/>
-
+                        android:layout_width="320dp"
+                        android:layout_height="278dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="50dp"
+                        android:clickable="true" />
 
 
                 </RelativeLayout>

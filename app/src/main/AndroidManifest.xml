@@ -9,6 +9,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
         <activity
             android:name=".pigfarm.CheckScreen"
             android:screenOrientation="portrait">
@@ -41,8 +44,14 @@
             android:screenOrientation="portrait" />
         <activity android:name=".pigfarm.Report.Report_Group"
             android:screenOrientation="portrait" />
+        <activity android:name=".pigfarm.Report.Report_Status"
+            android:screenOrientation="portrait" />
         <activity android:name=".pigfarm.Report.PigData_Report"
             android:screenOrientation="portrait" />
+        <activity android:name=".pigfarm.Report.WebView_Report_Status" />
+        <activity android:name=".pigfarm.Report.Report_History" />
+        <activity android:name=".pigfarm.Settings.SettingsActivity"/>
+
     </application>
 
 </manifest>

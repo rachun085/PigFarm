@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/ColorBackground"
+    android:orientation="vertical">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/Scroll_act06"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txt_eventname"
+                android:fontFamily="@font/thaisansneue_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เหตุการณ์"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"/>
+
+            <EditText
+                android:id="@+id/edit_eventname"
+                android:enabled="false"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:inputType="date"
+                android:textSize="20sp"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <TextView
+                android:id="@+id/txt_dateNote06"
+                android:fontFamily="@font/thaisansneue_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="วันที่"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_dateNote06"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:inputType="date"
+                android:textSize="20sp"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+                <ImageView
+                    android:id="@+id/img_calNote06"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="19dp"
+                    android:src="@drawable/calendar" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_numbaby06"
+                android:fontFamily="@font/thaisansneue_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="จำนวนลูก"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"/>
+
+            <EditText
+                android:id="@+id/edit_numbaby06"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <TextView
+                android:id="@+id/txt_weight06"
+                android:fontFamily="@font/thaisansneue_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="น้ำหนักครอก (กิโลกรัม)"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"/>
+
+            <EditText
+                android:id="@+id/edit_weight06"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"
+                android:inputType="numberDecimal"/>
+
+            <Button
+                android:id="@+id/btn_flacAct06"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="@color/ColorNavBar"
+                android:fontFamily="@font/thaisansneue_bold"
+                android:text="บันทึกข้อมูล"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

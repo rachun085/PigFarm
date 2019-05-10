@@ -3,11 +3,13 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 xmlns:tools="http://schemas.android.com/tools">
 
-<android.support.v7.widget.RecyclerView
-    tools:listitem="@layout/list_item_datamanage"
-    android:id="@+id/recyclerview"
-    android:layout_width="match_parent"
-    android:scrollbars="vertical"
-    android:layout_height="match_parent"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/list_item_datamanage" />
 
 </RelativeLayout>

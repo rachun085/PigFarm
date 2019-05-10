@@ -9,25 +9,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="27dp"
         android:fontFamily="@font/thaisansneue_bold"
+        android:hint="ไม่มีเหตุการณ์"
         android:text="ชื่อเหตุการณ์"
         android:textColor="#F5508A"
-        android:textSize="18sp"
-        android:hint="ไม่มีเหตุการณ์"/>
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/eventdata_recorddate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="23dp"
-        android:layout_toRightOf="@+id/eventdata_name"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/eventdata_name"
+        android:layout_marginEnd="90dp"
         android:fontFamily="@font/thaisansneue_bold"
         android:text="วันที่"
         android:textSize="18sp"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 </RelativeLayout>

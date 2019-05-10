@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/ColorBackground"
+    android:orientation="vertical">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/Scroll_act11"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txt_eventname"
+                android:fontFamily="@font/thaisansneue_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เหตุการณ์"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"/>
+
+            <EditText
+                android:id="@+id/edit_eventname"
+                android:enabled="false"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:inputType="date"
+                android:textSize="20sp"
+                android:fontFamily="@font/thaisansneue_regular"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+            <TextView
+                android:id="@+id/txt_dateNote11"
+                android:text="วันที่"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_dateNote11"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:inputType="date"
+                android:textSize="20sp"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <ImageView
+                android:id="@+id/img_calNote11"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/calendar"
+                android:layout_marginRight="30dp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_count11"
+                android:text="จำนวน (ตัว)"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <EditText
+                android:id="@+id/edit_count11"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:inputType="number"
+                android:textSize="20sp"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <TextView
+                android:id="@+id/txt_cause11"
+                android:text="สาเหตุ"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <EditText
+                android:id="@+id/edit_cause11"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <Button
+                android:id="@+id/btn_flacAct11"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/white"
+                android:background="@color/ColorNavBar"
+                android:fontFamily="@font/thaisansneue_bold"
+                android:text="บันทึกข้อมูล"
+                android:textSize="25dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

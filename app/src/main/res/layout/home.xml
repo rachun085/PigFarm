@@ -318,7 +318,7 @@
                                 android:layout_weight="0.5">
 
                                 <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                                    android:id="@+id/card_adduser"
+                                    android:id="@+id/card_settings"
                                     android:layout_marginRight="2dp"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"

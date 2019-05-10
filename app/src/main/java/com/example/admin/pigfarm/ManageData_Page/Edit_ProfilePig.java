@@ -1,5 +1,6 @@
 package com.example.admin.pigfarm.ManageData_Page;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -13,7 +14,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +36,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,8 +47,11 @@ public class Edit_ProfilePig extends Fragment {
     TextView txt_preglist;
     Button btn_update;
     ProgressDialog progressDialog;
-    String finalResult;
-    HttpParse httpParse = new HttpParse();
+    private String finalResult;
+    private HttpParse httpParse = new HttpParse();
+    Calendar myCalendar = Calendar.getInstance();
+    Calendar myCalendar2 = Calendar.getInstance();
+    ImageView img_a1, img_a2;
     String UpdateURL = "http://pigaboo.xyz/Update_DataPig.php";
 
 
@@ -54,7 +61,7 @@ public class Edit_ProfilePig extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.edit_profilepig, container, false);
+        return inflater.inflate(R.layout.edit_profilepig_spn, container, false);
 
     }
 
@@ -82,11 +89,61 @@ public class Edit_ProfilePig extends Fragment {
         edit_preglist = getView().findViewById(R.id.edit_preglist);
         txt_preglist = getView().findViewById(R.id.txt_preglist);
         btn_update = getView().findViewById(R.id.btn_update);
+        img_a1 = getView().findViewById(R.id.img_a1);
+        img_a2 = getView().findViewById(R.id.img_a2);
 
+        img_a1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog();
+            }
+        });
+
+        img_a2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog2();
+            }
+        });
 
 
         loaddatapigtoedit();
     }
+
+    public void showDatePickerDialog(){
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            monthOfYear = monthOfYear + 1;
+            edit_new.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
+        }
+    };
+
+    public void showDatePickerDialog2(){
+
+        DatePickerDialog datePickerDialog2 = new DatePickerDialog(getActivity(), date2, myCalendar2.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog2.show();
+    }
+
+    DatePickerDialog.OnDateSetListener date2 = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker v, int y, int month, int day) {
+            myCalendar.set(Calendar.YEAR, y);
+            myCalendar.set(Calendar.MONTH, month);
+            myCalendar.set(Calendar.DAY_OF_MONTH, day);
+            month = month + 1;
+            edit_bd.setText(y+"-"+month+"-"+day);
+        }
+    };
+
 
     private void loaddatapigtoedit(){
         String url = "http://pigaboo.xyz/Query_DataPig.php?pig_id="+getpigid;
@@ -156,7 +213,7 @@ public class Edit_ProfilePig extends Fragment {
                 @Override
                 public void onClick(View view) {
                     GetDataFromEditText();
-                    update_data(getpigno,getpigid,pig_preglist,pig_recorddate,pig_birthday,pig_breed,pig_idbreeder,pig_idbreeder2,pig_from,pig_idreserve);
+                    update_data(getpigno,getpigid,pig_recorddate,pig_birthday,pig_breed,pig_idbreeder,pig_idbreeder2,pig_from,pig_idreserve);
                 }
             });
 
@@ -179,14 +236,14 @@ public class Edit_ProfilePig extends Fragment {
     }
 
 
-    private void update_data (String pig_no, String pig_id,  String pig_preglist , String pig_recorddate,String pig_birthday, String pig_breed, String pig_idbreeder, String pig_idbreeder2, String pig_from, String pig_idreserve){
+    private void update_data (String getpigno, String pig_id, String pig_recorddate,String pig_birthday, String pig_breed, String pig_idbreeder, String pig_idbreeder2, String pig_from, String pig_idreserve){
         class update_dataClass extends AsyncTask<String,Void,String>{
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
 
-                progressDialog = ProgressDialog.show(getActivity(),"Loading Data",null,true,true);
+                progressDialog = ProgressDialog.show(getActivity(),"กำลังอัพเดตข้อมูล...",null,true,true);
             }
 
             @Override
@@ -194,14 +251,14 @@ public class Edit_ProfilePig extends Fragment {
                 HashMap<String,String> hashMap = new HashMap<>();
                 hashMap.put("getpigno",params[0]);
                 hashMap.put("edit_earID",params[1]);
-                hashMap.put("edit_preglist",params[2]);
-                hashMap.put("edit_new",params[3]);
-                hashMap.put("edit_bd",params[4]);
-                hashMap.put("edit_gene",params[5]);
-                hashMap.put("edit_dadNo",params[6]);
-                hashMap.put("edit_momNo",params[7]);
-                hashMap.put("edit_location",params[8]);
-                hashMap.put("edit_spareID",params[9]);
+//                hashMap.put("edit_preglist",params[2]);
+                hashMap.put("edit_new",params[2]);
+                hashMap.put("edit_bd",params[3]);
+                hashMap.put("edit_gene",params[4]);
+                hashMap.put("edit_dadNo",params[5]);
+                hashMap.put("edit_momNo",params[6]);
+                hashMap.put("edit_location",params[7]);
+                hashMap.put("edit_spareID",params[8]);
 
                 finalResult = httpParse.postRequest(hashMap,UpdateURL);
                 return finalResult;
@@ -217,7 +274,7 @@ public class Edit_ProfilePig extends Fragment {
         }
 
         update_dataClass update_dataclass = new update_dataClass();
-        update_dataclass.execute(pig_no,pig_id,pig_preglist,pig_recorddate,pig_birthday,pig_breed,pig_idbreeder,pig_idbreeder2,pig_from,pig_idreserve);
+        update_dataclass.execute(getpigno,pig_id,pig_recorddate,pig_birthday,pig_breed,pig_idbreeder,pig_idbreeder2,pig_from,pig_idreserve);
 
     }
 

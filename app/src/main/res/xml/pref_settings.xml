@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="match_parent" android:layout_width="match_parent">
+
+    <PreferenceCategory android:title="ยูนิต">
+
+        <EditTextPreference
+            android:key="unit_settings"
+            android:summary="ตั้งค่ายูนิตเริ่มต้น"
+            android:title="เลือกยูนิต" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

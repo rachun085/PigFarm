@@ -98,12 +98,6 @@ public class MainActivity_ManageData extends AppCompatActivity{
                         startActivity(intent4);
 
                         break;
-                    case R.id.nav_about:
-                        Intent intent5 = new Intent( );
-                        intent5.setComponent(new ComponentName("com.example.admin.pigfarm","com.example.admin.pigfarm.about_activity"));
-                        startActivity(intent5);
-
-                        break;
                     case R.id.nav_logout:
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity_ManageData.this, R.style.Theme_AppCompat_DayNight_Dialog_Alert);
                         builder.setCancelable(true);

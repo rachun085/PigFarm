@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.example.admin.R;
 import java.util.List;
 
-import static android.support.constraint.Constraints.TAG;
 
 public class Event_Adapter extends RecyclerView.Adapter<Event_Adapter.EventViewHolder>{
 

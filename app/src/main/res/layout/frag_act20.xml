@@ -145,6 +145,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
+                android:textColor="@color/white"
                 android:background="@color/ColorNavBar"
                 android:fontFamily="@font/thaisansneue_bold"
                 android:text="บันทึกข้อมูล"

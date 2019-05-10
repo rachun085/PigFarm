@@ -1,0 +1,112 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/ColorBackground"
+    android:orientation="vertical">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/Scroll_act05"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_spinId05"
+                android:text="เหตุการณ์"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <RelativeLayout
+                android:layout_width="325dp"
+                android:layout_height="45dp"
+                android:background="#d2d2d2"
+                android:layout_marginLeft="30dp">
+
+                <EditText
+                    android:id="@+id/edt_eventname"
+                    android:layout_width="325dp"
+                    android:layout_height="45dp"
+                    android:enabled="false"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_dateNote05"
+                android:text="วันที่"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_dateNote05"
+                    android:layout_width="325dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:inputType="date"
+                    android:textSize="20sp"
+                    android:textColor="@color/Colorfont"
+                    android:backgroundTint="@color/Colorfont"/>
+
+                <ImageView
+                    android:id="@+id/img_calNote05"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/calendar" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_numbaby05"
+                android:text="จำนวนลูก (ตัว)"
+                android:textColor="@color/Colorfont"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/thaisansneue_bold"/>
+
+            <EditText
+                android:id="@+id/edit_numbaby05"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:textColor="@color/Colorfont"
+                android:backgroundTint="@color/Colorfont"/>
+
+            <Button
+                android:id="@+id/btn_flacAct05"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="@color/ColorNavBar"
+                android:fontFamily="@font/thaisansneue_bold"
+                android:textColor="@color/white"
+                android:text="บันทึกข้อมูล"
+                android:textSize="25dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

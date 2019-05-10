@@ -36,8 +36,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -80,6 +83,11 @@ public class Rutnotbreeded_Fragment extends Fragment {
         spin_noteId15 = getView().findViewById(R.id.spin_noteId15);
         img_calNote15 = getView().findViewById(R.id.img_calNote15);
         btn_flacAct15 = getView().findViewById(R.id.btn_flacAct15);
+
+        String date_n = new SimpleDateFormat("yyyy-MM-dd",
+                Locale.getDefault()).format(new Date());
+
+        edit_dateNote15.setText(date_n);
 
         String url = "http://pigaboo.xyz/Query_WeanID.php?farm_id="+farm_id;
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
@@ -126,7 +134,7 @@ public class Rutnotbreeded_Fragment extends Fragment {
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             monthOfYear = monthOfYear + 1;
-            edit_dateNote15.setText(year+"/"+monthOfYear+"/"+dayOfMonth);
+            edit_dateNote15.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
         }
     };
 
@@ -136,7 +144,7 @@ public class Rutnotbreeded_Fragment extends Fragment {
             try{
                 OkHttpClient _okHttpClient = new OkHttpClient();
                 RequestBody _requestBody = new FormBody.Builder()
-                        .add("event_id", "15")
+                        .add("event_id", "12")
                         .add("event_recorddate", edit_dateNote15.getText().toString())
                         .add("pig_id", spin_noteId15.getSelectedItem().toString())
                         .add("note", edit_msg15.getText().toString())

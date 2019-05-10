@@ -39,7 +39,7 @@ public class Report_Group extends AppCompatActivity {
     private String farm_id,pdf;
     Spinner spin_type_of_report, spin_place_mom;
     Button btn_submit_report;
-    EditText edt_lengthtime, edt_checkpregnant, edt_reportmom, edt_startdate, edt_enddate;
+    EditText edt_lengthtime, edt_reportmom, edt_startdate, edt_enddate;
     private String lengthtime,checkpregnant;
     Calendar StartDate = Calendar.getInstance();
     Calendar EndDate = Calendar.getInstance();
@@ -58,7 +58,6 @@ public class Report_Group extends AppCompatActivity {
         spin_type_of_report = findViewById(R.id.spin_type_of_report);
         spin_place_mom = findViewById(R.id.spin_place_mom);
         btn_submit_report = findViewById(R.id.btn_submit_report);
-        edt_checkpregnant = findViewById(R.id.edt_checkpregnant);
         edt_reportmom = findViewById(R.id.edt_reportmom);
         edt_startdate = findViewById(R.id.edt_startdate);
         edt_enddate = findViewById(R.id.edt_enddate);
@@ -105,7 +104,6 @@ public class Report_Group extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                         if (String.valueOf(spin_type_of_report.getSelectedItem()).equals("ทั้งหมด")){
-                            checkpregnant = edt_checkpregnant.getText().toString();
 
                             pdf = "http://pigaboo.xyz/Report/All_Report.php";
                             Intent intent = new Intent(Report_Group.this, PigData_Report.class);
@@ -116,7 +114,6 @@ public class Report_Group extends AppCompatActivity {
                         }
 
                         else if (String.valueOf(spin_type_of_report.getSelectedItem()).equals("หมูสาวยังไม่ได้ผสม")){
-                            checkpregnant = edt_checkpregnant.getText().toString();
 
                             pdf = "http://pigaboo.xyz/Report/Momnotbreed_Report.php";
                             Intent intent = new Intent(Report_Group.this, PigData_Report.class);
@@ -130,7 +127,6 @@ public class Report_Group extends AppCompatActivity {
 
 
                         else if (String.valueOf(spin_type_of_report.getSelectedItem()).equals("ผสม")){
-                            checkpregnant = edt_checkpregnant.getText().toString();
 
                             pdf = "http://pigaboo.xyz/Report/Mombreed_Report.php";
                             Intent intent = new Intent(Report_Group.this, PigData_Report.class);
@@ -142,7 +138,6 @@ public class Report_Group extends AppCompatActivity {
                         }
 
                         else if (String.valueOf(spin_type_of_report.getSelectedItem()).equals("ไม่ท้อง")){
-                            checkpregnant = edt_checkpregnant.getText().toString();
 
                             pdf = "http://pigaboo.xyz/Report/NoPregnant_Report.php";
                             Intent intent = new Intent(Report_Group.this, PigData_Report.class);
@@ -154,7 +149,6 @@ public class Report_Group extends AppCompatActivity {
                         }
 
                         else if (String.valueOf(spin_type_of_report.getSelectedItem()).equals("กำหนดเข้าคลอด")){
-                            checkpregnant = edt_checkpregnant.getText().toString();
 
                             pdf = "http://pigaboo.xyz/Report/DueDate_Pregnant_Report.php";
                             Intent intent = new Intent(Report_Group.this, PigData_Report.class);
@@ -170,7 +164,6 @@ public class Report_Group extends AppCompatActivity {
                         }
 
                         else if (String.valueOf(spin_type_of_report.getSelectedItem()).equals("คลอด")){
-                            checkpregnant = edt_checkpregnant.getText().toString();
 
                             pdf = "http://pigaboo.xyz/Report/Maternity_but_notwean_Report.php";
                             Intent intent = new Intent(Report_Group.this, PigData_Report.class);
@@ -181,7 +174,6 @@ public class Report_Group extends AppCompatActivity {
                         }
 
                         else if (String.valueOf(spin_type_of_report.getSelectedItem()).equals("หย่านม")){
-                            checkpregnant = edt_checkpregnant.getText().toString();
 
                             pdf = "http://pigaboo.xyz/Report/Wean_not_Breed_Report.php";
                             Intent intent = new Intent(Report_Group.this, PigData_Report.class);

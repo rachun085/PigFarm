@@ -81,7 +81,7 @@ public class Wean_Fragment extends Fragment {
         btn_flacAct06 = getView().findViewById(R.id.btn_flacAct06);
         img_calNote06 = getView().findViewById(R.id.img_calNote06);
 
-        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+        String date_n = new SimpleDateFormat("yyyy-MM-dd",
                 Locale.getDefault()).format(new Date());
         edit_dateNote06.setText(date_n);
 
@@ -129,7 +129,7 @@ public class Wean_Fragment extends Fragment {
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             monthOfYear = monthOfYear + 1;
-            edit_dateNote06.setText(year+"/"+monthOfYear+"/"+dayOfMonth);
+            edit_dateNote06.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
         }
     };
 
@@ -162,7 +162,6 @@ public class Wean_Fragment extends Fragment {
 
             if (result != null){
                 Toast.makeText(getActivity(), "บันทึกข้อมูลเรียบร้อยแล้ว",Toast.LENGTH_SHORT).show();
-                edit_dateNote06.setText("");
                 edit_numbaby06.setText("");
                 edit_weight06.setText("");
 

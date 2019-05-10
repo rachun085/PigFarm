@@ -44,7 +44,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/thaisansneue_bold"
-                android:text="วันที่เปิด"
+                android:text="วันที่เปิดประวัติ"
                 android:textColor="@color/Colorfont"
                 android:textSize="20sp" />
 

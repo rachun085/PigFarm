@@ -72,6 +72,8 @@ public class RecyclerFragment extends Fragment implements MyAdapter.OnItemClickL
         loadProducts();
 
         return rootView;
+
+
     }
 
     @Override
@@ -80,6 +82,7 @@ public class RecyclerFragment extends Fragment implements MyAdapter.OnItemClickL
     }
 
     private void loadProducts(){
+
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Loading...");
         progressDialog.show();
@@ -89,7 +92,6 @@ public class RecyclerFragment extends Fragment implements MyAdapter.OnItemClickL
             public void onResponse(String response) {
                 progressDialog.dismiss();
                 showJSON(response);
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -108,20 +110,22 @@ public class RecyclerFragment extends Fragment implements MyAdapter.OnItemClickL
             JSONObject jsonObject = new JSONObject(response);
             JSONArray result = jsonObject.getJSONArray("result");
 
-            for (int i = 0; i<result.length(); i++){
-                JSONObject collectData = result.getJSONObject(i);
+                for (int i = 0; i<result.length(); i++){
+                    JSONObject collectData = result.getJSONObject(i);
 
-                pig_id = collectData.getString("pig_id");
-                pig_no = collectData.getString("pig_no");
+                    pig_id = collectData.getString("pig_id");
+                    pig_no = collectData.getString("pig_no");
 
-                Model model = new Model(pig_id,pig_no);
-                profilepig.add(model);
-        }
+                    Model model = new Model(pig_id,pig_no);
+                    profilepig.add(model);
+
+            }
+
+
 
             adapter = new MyAdapter(getActivity(), profilepig);
             rv.setAdapter(adapter);
             adapter.setOnItemClickListener(RecyclerFragment.this);
-
 
         }catch (JSONException ex) {
             ex.printStackTrace();
@@ -134,8 +138,8 @@ public class RecyclerFragment extends Fragment implements MyAdapter.OnItemClickL
         Model clickItem = profilepig.get(position);
         Fragment_datapig fragment_datapig = new Fragment_datapig();
         Bundle bundle2 = new Bundle();
-        bundle2.putString("pig_no",clickItem.getPig_no());
         bundle2.putString("pig_id",clickItem.getPig_id());
+        bundle2.putString("pig_no",clickItem.getPig_no());
         FragmentTransaction ft = getFragmentManager().beginTransaction();
                 fragment_datapig.setArguments(bundle2);
                 ft.replace(R.id.container, fragment_datapig);

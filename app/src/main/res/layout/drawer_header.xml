@@ -11,10 +11,10 @@
 
     <ImageView
         android:id="@+id/peopeoico"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="84dp"
+        android:layout_height="81dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/peopleico" />
@@ -23,12 +23,12 @@
         android:id="@+id/textfarm_drawer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/thaisansneue_bold"
         android:text="ฟาร์ม : "
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/peopeoico"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,12 +36,12 @@
         android:id="@+id/textunit_drawer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/thaisansneue_bold"
         android:text="ยูนิต :"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/peopeoico"
         app:layout_constraintTop_toBottomOf="@+id/textfarm_drawer" />
 </android.support.constraint.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,7 @@ import com.example.admin.R;
 import com.example.admin.pigfarm.ManageData_Page.MainActivity_ManageData;
 import com.example.admin.pigfarm.Report.PigData_Report;
 import com.example.admin.pigfarm.Report.Report_Home;
+import com.example.admin.pigfarm.Settings.SettingsActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,10 +34,10 @@ import org.json.JSONObject;
 
 
 
-public class Home extends AppCompatActivity{
+public class Home extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
 
     TextView txt_user, txt_farm, txt_unit;
-    CardView card_setting, card_profile, card_event, card_report, card_data;
+    CardView card_settings, card_profile, card_event, card_report, card_data;
     String farm_owner,farm_name,farm_id,unit_name,username,password  = "";
     private SwipeRefreshLayout mSwipeRefresh;
 
@@ -43,17 +45,13 @@ public class Home extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+
         SharedPreferences shared = getSharedPreferences("Login", Context.MODE_PRIVATE);
         username = shared.getString("username", "");
         password = shared.getString("pass", "");
 
         mSwipeRefresh = findViewById(R.id.swiperefresh);
-        mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                doupdate();
-            }
-        });
+        mSwipeRefresh.setOnRefreshListener(this);
 
         txt_user = findViewById(R.id.txt_user);
         txt_farm = findViewById(R.id.txt_farm);
@@ -77,9 +75,6 @@ public class Home extends AppCompatActivity{
 
     }
 
-    private void doupdate(){
-        mSwipeRefresh.setRefreshing(false);
-    }
 
     @Override
     protected void onResume() {
@@ -106,6 +101,7 @@ public class Home extends AppCompatActivity{
                     card_event = findViewById(R.id.card_event);
                     card_data = findViewById(R.id.card_data);
                     card_report = findViewById(R.id.card_report);
+                    card_settings = findViewById(R.id.card_settings);
 
 
 
@@ -153,6 +149,14 @@ public class Home extends AppCompatActivity{
                         }
                     });
 
+                    card_settings.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(Home.this, SettingsActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
                 }
             }catch (JSONException ex) {
                 ex.printStackTrace();
@@ -160,7 +164,7 @@ public class Home extends AppCompatActivity{
         }
 
         public void onLogoutClick(View v) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(Home.this, R.style.Theme_AppCompat_DayNight_Dialog_Alert);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Home.this, R.style.Theme_AppCompat_Light_Dialog_Alert);
             builder.setCancelable(true);
             builder.setMessage("คุณต้องการออกระบบใช่หรือไม่");
             builder.setPositiveButton("ใช่",
@@ -227,6 +231,13 @@ public class Home extends AppCompatActivity{
     }
 
 
-
-
+    @Override
+    public void onRefresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mSwipeRefresh.setRefreshing(false);
+            }
+        },2000);
+    }
 }

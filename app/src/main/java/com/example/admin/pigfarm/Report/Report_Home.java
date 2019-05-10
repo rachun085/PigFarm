@@ -14,7 +14,7 @@ import com.example.admin.R;
 public class Report_Home extends AppCompatActivity {
 
     private String farm_id;
-    CardView card_groupmanage, card_foodmanage, card_status_of_dadmom,card_history_of_dadmom;
+    CardView card_groupmanage, card_status_of_dadmom,card_history_of_dadmom;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,7 +25,6 @@ public class Report_Home extends AppCompatActivity {
         farm_id = farm.getString("farm_id", "");
 
         card_groupmanage = findViewById(R.id.card_groupmanage);
-        card_foodmanage = findViewById(R.id.card_foodmanage);
         card_status_of_dadmom = findViewById(R.id.card_status_of_dadmom);
         card_history_of_dadmom = findViewById(R.id.card_history_of_dadmom);
 
@@ -36,5 +35,23 @@ public class Report_Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        card_status_of_dadmom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Report_Home.this, Report_Status.class);
+                startActivity(intent);
+            }
+        });
+
+        card_history_of_dadmom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Report_Home.this, Report_History.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

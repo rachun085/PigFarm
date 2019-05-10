@@ -48,7 +48,6 @@ public class PigData_Report extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pigdata_report);
 
-        mySwipeRefreshLayout = findViewById(R.id.swipeContainer);
 
         SharedPreferences farm = getSharedPreferences("Farm", Context.MODE_PRIVATE);
         farm_id = farm.getString("farm_id", "");
@@ -72,14 +71,6 @@ public class PigData_Report extends AppCompatActivity {
         webview.setWebViewClient(new MyWebViewClient());
         webview.loadUrl(buffer.toString());
 
-        mySwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                webview.reload();
-                mySwipeRefreshLayout.setRefreshing(false);
-            }
-        });
-
     }
 
     private class MyWebViewClient extends WebViewClient{
@@ -93,7 +84,7 @@ public class PigData_Report extends AppCompatActivity {
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
                 pDialog = new ProgressDialog(PigData_Report.this);
-                pDialog.setTitle("ออกรายงาน");
+                pDialog.setTitle("กำลังออกรายงาน");
                 pDialog.setMessage("โปรดรอสักครู่...");
                 pDialog.setIndeterminate(false);
                 pDialog.setCancelable(false);

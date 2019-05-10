@@ -80,7 +80,7 @@ public class Entrustment_Fragment extends Fragment {
         img_calNote05 = getView().findViewById(R.id.img_calNote05);
 
 
-        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+        String date_n = new SimpleDateFormat("yyyy-MM-dd",
                 Locale.getDefault()).format(new Date());
         edit_dateNote05.setText(date_n);
 
@@ -129,7 +129,7 @@ public class Entrustment_Fragment extends Fragment {
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             monthOfYear = monthOfYear + 1;
-            edit_dateNote05.setText(year+"/"+monthOfYear+"/"+dayOfMonth);
+            edit_dateNote05.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
         }
     };
 
@@ -160,7 +160,6 @@ public class Entrustment_Fragment extends Fragment {
 
             if (result != null){
                 Toast.makeText(getActivity(), "บันทึกข้อมูลเรียบร้อยแล้ว",Toast.LENGTH_SHORT).show();
-                edit_dateNote05.setText("");
                 edit_numbaby05.setText("");
 
             }else {

@@ -1,8 +1,10 @@
 package com.example.admin.pigfarm;
 
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,17 +14,29 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.admin.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -40,6 +54,12 @@ public class Reprofile_Fragment extends Fragment {
     ImageView img_calOpen2, img_calBD2;
     Calendar myCalendar = Calendar.getInstance();
     Calendar myCalendar2 = Calendar.getInstance();
+    ArrayList<String> list = new ArrayList<>();
+    ArrayList<String> listDad = new ArrayList<>();
+    ArrayList<String> listItems = new ArrayList<>();
+    ArrayList<String> listItemsDad = new ArrayList<>();
+    ArrayAdapter<String> adapter;
+    ArrayAdapter<String> adapter1;
 
 
     public Reprofile_Fragment() {
@@ -59,7 +79,6 @@ public class Reprofile_Fragment extends Fragment {
         SharedPreferences shared = getActivity().getSharedPreferences("Login", Context.MODE_PRIVATE);
         farm_id = shared.getString("farm_id", "missing");
 
-
         bindWidget();
     }
 
@@ -69,13 +88,13 @@ public class Reprofile_Fragment extends Fragment {
         edit_opendate2 = getView().findViewById(R.id.edit_opendate2);
         edit_birthday2 = getView().findViewById(R.id.edit_birthday2);
         edit_breed2 = getView().findViewById(R.id.edit_breed2);
-        edit_dadId2 = getView().findViewById(R.id.edit_dadId2);
         edit_momId2 = getView().findViewById(R.id.edit_momId2);
         edit_form2 = getView().findViewById(R.id.edit_form2);
         edit_reserveID2 = getView().findViewById(R.id.edit_reserveID2);
         btn_saveBio2 = getView().findViewById(R.id.btn_saveBio2);
         img_calOpen2 = getView().findViewById(R.id.img_calOpen2);
         img_calBD2 = getView().findViewById(R.id.img_calBD2);
+        edit_dadId2 = getView().findViewById(R.id.edit_dadId2);
 
         String date_n = new SimpleDateFormat("yyyy-MM-dd",
                 Locale.getDefault()).format(new Date());
@@ -187,6 +206,7 @@ public class Reprofile_Fragment extends Fragment {
             }
         }
     }
+
 
 
 }

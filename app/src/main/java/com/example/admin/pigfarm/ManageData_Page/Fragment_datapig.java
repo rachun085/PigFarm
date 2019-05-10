@@ -6,6 +6,7 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -34,7 +35,7 @@ import java.util.List;
 
 
 
-public class Fragment_datapig extends android.support.v4.app.Fragment {
+public class Fragment_datapig extends Fragment {
 
     private TextView text_recorddate,text_preglist, text_bd, text_breed, text_bredder, text_bredder1, text_from, text_reserveid,texttitle_preglist, text_pigid;
     String getpigno, getpigid, pig_no, pig_id, pig_preglist, pig_recorddate, pig_birthday, pig_breed, pig_idbreeder, pig_idbreeder2, pig_from, pig_idreserve,
@@ -60,8 +61,8 @@ public class Fragment_datapig extends android.support.v4.app.Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Bundle bundle2 = getArguments();
-        getpigno = bundle2.getString("pig_no");
         getpigid = bundle2.getString("pig_id");
+        getpigno = bundle2.getString("pig_no");
 
         text_pigid = getView().findViewById(R.id.text_pigid);
         text_recorddate = getView().findViewById(R.id.text_recorddate);
@@ -88,8 +89,8 @@ public class Fragment_datapig extends android.support.v4.app.Fragment {
                 public void onClick(View view) {
                     DelEvent_Fragment delEvent_fragment = new DelEvent_Fragment();
                     Bundle bundle3 = new Bundle();
-                    bundle3.putString("pig_no",getpigno);
                     bundle3.putString("pig_id",getpigid);
+                    bundle3.putString("pig_no",getpigno);
                     delEvent_fragment.setArguments(bundle3);
 
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -108,8 +109,8 @@ public class Fragment_datapig extends android.support.v4.app.Fragment {
 
                     Edit_ProfilePig edit_profilePig = new Edit_ProfilePig();
                     Bundle bundle2 = new Bundle();
-                    bundle2.putString("pig_no",getpigno);
                     bundle2.putString("pig_id",getpigid);
+                    bundle2.putString("pig_no",getpigno);
 
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ft.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
@@ -169,7 +170,7 @@ public class Fragment_datapig extends android.support.v4.app.Fragment {
                 event_recorddate = collectData.getString("event_recorddate");
 
 
-                text_pigid.setText(getpigid);
+                text_pigid.setText(pig_id);
                 text_recorddate.setText(pig_recorddate);
                 text_bd.setText(pig_birthday);
                 text_breed.setText(pig_breed);

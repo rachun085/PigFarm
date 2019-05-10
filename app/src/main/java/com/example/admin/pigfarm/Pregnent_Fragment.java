@@ -89,7 +89,7 @@ public class Pregnent_Fragment extends Fragment {
             btn_flacAct03 = getView().findViewById(R.id.btn_flacAct03);
             img_calNote03 = getView().findViewById(R.id.img_calNote03);
 
-        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+        String date_n = new SimpleDateFormat("yyyy-MM-dd",
                 Locale.getDefault()).format(new Date());
         edit_dateNote03.setText(date_n);
 
@@ -212,7 +212,7 @@ public class Pregnent_Fragment extends Fragment {
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             monthOfYear = monthOfYear + 1;
-            edit_dateNote03.setText(year+"/"+monthOfYear+"/"+dayOfMonth);
+            edit_dateNote03.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
         }
     };
 }

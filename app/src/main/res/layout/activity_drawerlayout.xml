@@ -5,8 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
-    android:fitsSystemWindows="true">
-    <!--tools:openDrawer="start"-->
+    android:fitsSystemWindows="true"
+    android:background="@color/ColorBackground">
+    <!--tools:openDrawer="start">-->
 
     <include layout="@layout/content_main" />
 

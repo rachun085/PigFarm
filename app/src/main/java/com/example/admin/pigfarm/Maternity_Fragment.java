@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -37,6 +39,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import okhttp3.FormBody;
@@ -46,6 +49,8 @@ import okhttp3.RequestBody;
 
 
 public class Maternity_Fragment extends Fragment {
+
+    String pig_amount_pregnant,sum_amount;
     public static String gettextbreed,farm_id;
     ArrayList<String> list = new ArrayList<>();
     ArrayList<String> listItems = new ArrayList<>();
@@ -54,7 +59,13 @@ public class Maternity_Fragment extends Fragment {
     EditText edit_dateNote04, edit_live04, edit_die04, edit_baby04, edit_weight04;
     Button btn_flacAct04;
     ImageView img_calNote04;
+    private int amount_pregnant_index,amount;
     Calendar myCalendar = Calendar.getInstance();
+
+    private String[] amount_pregnant_array;
+    private String[] pig_id_array;
+    private List<String> mStrings_pig_id = new ArrayList<String>();
+    private List<String> mStrings_pregnant = new ArrayList<String>();
 
     public Maternity_Fragment() {
     }
@@ -84,7 +95,20 @@ public class Maternity_Fragment extends Fragment {
         btn_flacAct04 = getView().findViewById(R.id.btn_flacAct04);
         img_calNote04 = getView().findViewById(R.id.img_calNote04);
 
-        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+        spin_noteId04.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adtv, View view, int i, long l) {
+                amount_pregnant_index = adtv.getSelectedItemPosition();
+                Log.d("amount_value","value: "+amount_pregnant_index);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        String date_n = new SimpleDateFormat("yyyy-MM-dd",
                 Locale.getDefault()).format(new Date());
         edit_dateNote04.setText(date_n);
 
@@ -104,12 +128,22 @@ public class Maternity_Fragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(this.getActivity().getApplicationContext());
         requestQueue.add(stringRequest);
 
-        btn_flacAct04.setOnClickListener(new View.OnClickListener() {
+
+        String url2 = "http://pigaboo.xyz/Query_AmountPregnant.php?farm_id="+farm_id;
+        StringRequest stringRequest2 = new StringRequest(url2, new Response.Listener<String>() {
             @Override
-            public void onClick(View v) {
-                new InsertAsyn().execute("http://pigaboo.xyz/Insert_EventMaternity.php");
+            public void onResponse(String response) {
+                QueryAmountPregnant(response);
             }
-        });
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getActivity(), "Wrong", Toast.LENGTH_SHORT).show();
+            }
+        }
+        );
+        RequestQueue requestQueue2 = Volley.newRequestQueue(this.getActivity().getApplicationContext());
+        requestQueue2.add(stringRequest2);
 
         img_calNote04.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,12 +151,24 @@ public class Maternity_Fragment extends Fragment {
                 showDatePickerDialog();
             }
         });
+
+        btn_flacAct04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getActivity(), amount_pregnant_array[amount_pregnant_index], Toast.LENGTH_SHORT).show();
+                new InsertAsyn().execute("http://pigaboo.xyz/Insert_EventMaternity.php");
+            }
+        });
+
+
     }
 
     private class InsertAsyn extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... strings) {
             try{
+                amount = Integer.parseInt(amount_pregnant_array[amount_pregnant_index]);
+                amount = amount+1;
                 OkHttpClient _okHttpClient = new OkHttpClient();
                 RequestBody _requestBody = new FormBody.Builder()
                         .add("event_id", "4")
@@ -132,7 +178,7 @@ public class Maternity_Fragment extends Fragment {
                         .add("pig_die", edit_die04.getText().toString())
                         .add("pig_seedlings", edit_baby04.getText().toString())
                         .add("pig_allweight", edit_weight04.getText().toString())
-                        .add("pig_amount_pregnant", "1")
+                        .add("pig_amount_pregnant", String.valueOf(amount))
                         .build();
 
                 Request _request = new Request.Builder().url(strings[0]).post(_requestBody).build();
@@ -185,7 +231,11 @@ public class Maternity_Fragment extends Fragment {
 
             for (int i = 0; i<result.length(); i++){
                 JSONObject collectData = result.getJSONObject(i);
+                mStrings_pig_id.add(collectData.getString("pig_id"));
+                pig_id_array = new String[mStrings_pig_id.size()];
+                pig_id_array = mStrings_pig_id.toArray(pig_id_array);
                 list.add(collectData.getString("pig_id"));
+
             }
         }catch (JSONException ex) {
             ex.printStackTrace();
@@ -195,6 +245,30 @@ public class Maternity_Fragment extends Fragment {
         adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_dropdown_item, listItems);
         spin_noteId04.setAdapter(adapter);
     }
+
+
+
+
+    public void QueryAmountPregnant(String response){
+        try {
+            JSONObject jsonObject2 = new JSONObject(response);
+            JSONArray result2 = jsonObject2.getJSONArray("result");
+
+
+            for (int i = 0; i<result2.length(); i++){
+                JSONObject collectData2 = result2.getJSONObject(i);
+                mStrings_pregnant.add(collectData2.getString("pig_amount_pregnant"));
+                amount_pregnant_array = new String[mStrings_pregnant.size()];
+                amount_pregnant_array = mStrings_pregnant.toArray(amount_pregnant_array);
+            }
+        }catch (JSONException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
+
+
 
     public void showDatePickerDialog(){
 
@@ -209,7 +283,7 @@ public class Maternity_Fragment extends Fragment {
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             monthOfYear = monthOfYear + 1;
-            edit_dateNote04.setText(year+"/"+monthOfYear+"/"+dayOfMonth);
+            edit_dateNote04.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
         }
     };
 

@@ -2,8 +2,10 @@ package com.example.admin.pigfarm;
 
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,7 +19,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +42,7 @@ import java.io.IOException;
 import java.security.AlgorithmConstraints;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -57,6 +62,8 @@ public class CheckPregnant_Fragment extends Fragment {
     Spinner spin_noteId02, spin_result02;
     EditText edit_dateNote02;
     Button btn_flacAct02;
+    ImageView img_calNote02;
+    Calendar myCalendar = Calendar.getInstance();
 
     private String[] event_date_array;
     private String[] pig_id_array;
@@ -95,8 +102,9 @@ public class CheckPregnant_Fragment extends Fragment {
         spin_noteId02 = getView().findViewById(R.id.spin_noteId02);
         spin_result02 = getView().findViewById(R.id.spin_result02);
         btn_flacAct02 = getView().findViewById(R.id.btn_flacAct02);
+        img_calNote02 = getView().findViewById(R.id.img_calNote02);
 
-        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+        String date_n = new SimpleDateFormat("yyyy-MM-dd",
                 Locale.getDefault()).format(new Date());
         edit_dateNote02.setText(date_n);
 
@@ -141,7 +149,33 @@ public class CheckPregnant_Fragment extends Fragment {
 
             }
         });
+
+        img_calNote02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog();
+            }
+        });
     }
+
+    public void showDatePickerDialog(){
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
+
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            monthOfYear = monthOfYear + 1;
+            edit_dateNote02.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
+        }
+    };
 
     private class InsertAsyn extends AsyncTask<String, Void, String> {
         @Override

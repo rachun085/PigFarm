@@ -46,10 +46,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, final int position) {
         Model model = profilepig.get(position);
 
-        String pig_no = model.getPig_no();
         String pig_id = model.getPig_id();
 
-        holder.textnumberid.setText("ลำดับที่ : "+model.getPig_no());
         holder.textpigid.setText("เบอร์หู : "+model.getPig_id());
 
 
@@ -62,12 +60,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView textnumberid,textpigid;
+        TextView textpigid;
 
         public MyViewHolder(View itemView){
             super(itemView);
 
-            textnumberid = itemView.findViewById(R.id.textnumberid);
             textpigid = itemView.findViewById(R.id.textpigid);
 
             itemView.setOnClickListener(new View.OnClickListener() {

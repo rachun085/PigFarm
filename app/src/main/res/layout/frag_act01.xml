@@ -36,8 +36,9 @@
                     android:id="@+id/spin_noteId01"
                     android:layout_width="325dp"
                     android:layout_height="45dp"
-                    android:spinnerMode="dropdown"
-                    />
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:spinnerMode="dropdown" />
 
                 <ImageView
                     android:id="@+id/img_spin01"
@@ -96,15 +97,27 @@
                 android:textColor="@color/Colorfont"
                 android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/edit_dadIdAct01"
+            <RelativeLayout
                 android:layout_width="325dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:textSize="20sp"
-                android:fontFamily="@font/thaisansneue_regular"
-                android:textColor="@color/Colorfont"
-                android:backgroundTint="@color/Colorfont"/>
+                android:layout_height="45dp"
+                android:background="#d2d2d2"
+                android:layout_marginLeft="30dp">
+
+                <Spinner
+                    android:id="@+id/spin_dadId01"
+                    android:layout_width="325dp"
+                    android:layout_height="45dp"
+                    android:spinnerMode="dropdown"
+                    />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/dropdown" />
+            </RelativeLayout>
 
             <Button
                 android:id="@+id/btn_flacAct01"

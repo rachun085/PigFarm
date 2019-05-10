@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PigFarm</string>
+    <string name="app_name">PIG-A-BOO</string>
     <color name="bg">#F76196</color>
     <color name="black">#000</color>
 
@@ -13,16 +13,10 @@
         <item>หย่านม</item>
         <item>รับเลี้ยงลูก</item>
         <item>คัดทิ้ง</item>
-        <item>น้ำหนักพ่อแม่</item>
         <item>หมายเหตุ</item>
-        <item>ลูกหมูตาย</item>
-        <item>ให้ชื่อบริเวณ</item>
-        <item>เบอร์หาย</item>
-        <item>ตั้งชื่อคอก</item>
         <item>เป็นสัดแต่ไม่ผสมพันธุ์</item>
         <item>ท้องลม</item>
         <item>แยกหย่านม</item>
-        <item>ชื่อกลุ่มผสมพันธุ์</item>
         <item>ได้รับยารักษา</item>
         <item>ป่วยเป็นโรค</item>
     </string-array>
@@ -57,6 +51,93 @@
         <item>ต้องการ</item>
         <item>ไม่ต้องการ</item>
     </string-array>
+
+
+    <string-array name="sort_by_status">
+        <item>เบอร์หู</item>
+        <item>ท้องที่</item>
+        <item>สถานภาพ</item>
+        <item>วันสุดท้าย</item>
+    </string-array>
+
+    <string-array name="type_of_status">
+        <item>พ่อ</item>
+        <item>แม่</item>
+        <item>ทั้งหมด</item>
+    </string-array>
+
+    <string-array name="history">
+        <item>แม่พันธุ์</item>
+        <item>พ่อพันธุ์</item>
+    </string-array>
+
+    <string-array name="type_of_history">
+        <item>เบอร์หู</item>
+        <item>สถานภาพ</item>
+    </string-array>
+
+    <string-array name="type_of_status2">
+        <item>หมูในฝูง</item>
+        <item>หมูคัดทิ้ง</item>
+        <item>ทั้งหมด</item>
+    </string-array>
+
+    <string-array name="name_of_disease">
+        <item>ไม่มีน้ำนม</item>
+        <item>เต้านมอักเสบ</item>
+        <item>มดลูกอักเสบ</item>
+        <item>หอบเรื้อรัง</item>
+        <item>คลอดนาน</item>
+        <item>คลอดยาก</item>
+        <item>ช่องคลอดทะลัก</item>
+        <item>มดลูกทะลัก</item>
+        <item>หนองไหล</item>
+        <item>คลอดไม่หมด</item>
+        <item>พาร์โวไวรัส</item>
+        <item>ท้องร่วง</item>
+        <item>ท้องผูก</item>
+        <item>โรค ทีจีอี</item>
+        <item>ซัลโมเนลล่า</item>
+        <item>บิดมูกเลือด</item>
+        <item>ลำไส้อักเสบ</item>
+        <item>แผลหลุมในกระเพาะ</item>
+        <item>ปอดบวม</item>
+        <item>ไอเรื้อรัง</item>
+        <item>เยื่อหุ้มปอดอักเสบ</item>
+        <item>พาสเจอเรลล่า</item>
+        <item>มัยโคพลาสม่า</item>
+        <item>ไข้หวัด</item>
+        <item>ไข้สูง</item>
+        <item>ไม่กินอาหาร</item>
+        <item>ลูกขี้ไหล</item>
+        <item>ขากระเผลก</item>
+        <item>ข้ออักเสบ</item>
+        <item>บาดเจ็บ</item>
+        <item>เป็นฝี</item>
+        <item>ทวารทะลัก</item>
+        <item>พฤติกรรมดุร้าย</item>
+        <item>ผอมบาง</item>
+        <item>โรคทางเดินปัสสาวะ</item>
+        <item>เกลือเป็นพิษ</item>
+        <item>เดินกระแตเวียน</item>
+        <item>พยาธิภายใน</item>
+        <item>พยาธิภายนอก</item>
+        <item>พิษสุนัขบ้าเทียม</item>
+        <item>ไฟลามทุ่ง</item>
+        <item>โรคเลปโต</item>
+        <item>แท้งติดต่อ</item>
+        <item>ลิสเตอร์ริโอซิส</item>
+        <item>โรคเกลสเซ่อร์</item>
+        <item>เยื่อหุ้มสมองอักเสบ</item>
+        <item>อหิวาต์สุกร</item>
+        <item>อหิวาต์อาฟริกัน</item>
+        <item>อื่นๆ</item>
+    </string-array>
+
+    <string name="summary_account_settings">แก้ไขชื่อเจ้าของฟาร์ม</string>
+    <string name="title_account_settings">บัญชีผู้ใช้</string>
+    <string name="key_account_settings">key_account_settings</string>
+
 
 
     <string name="title_activity_test_view_pager">TestViewPager</string>

@@ -98,7 +98,7 @@
                 android:layout_marginLeft="30dp"/>
 
             <EditText
-                android:id="@+id/edit_phamaG19"
+                android:id="@+id/edit_drugG19"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -107,7 +107,7 @@
                 android:backgroundTint="@color/Colorfont"/>
 
             <TextView
-                android:id="@+id/txt_dateNote10"
+                android:id="@+id/txt_dateNote19"
                 android:text="ข้อความ"
                 android:textColor="@color/Colorfont"
                 android:layout_marginLeft="30dp"
@@ -124,14 +124,14 @@
                 android:layout_marginLeft="30dp"
                 android:textSize="20sp"
                 android:textColor="@color/Colorfont"
-                android:backgroundTint="@color/Colorfont"
-                />
+                android:backgroundTint="@color/Colorfont"/>
 
             <Button
                 android:id="@+id/btn_flacAct19"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
+                android:textColor="@color/white"
                 android:layout_marginTop="50dp"
                 android:background="@color/ColorNavBar"
                 android:fontFamily="@font/thaisansneue_bold"

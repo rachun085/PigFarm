@@ -82,7 +82,7 @@ public class Exclude_Fragment extends Fragment {
         btn_flacAct08 = getView().findViewById(R.id.btn_flacAct08);
         img_calNote08 = getView().findViewById(R.id.img_calNote08);
 
-        String date_n = new SimpleDateFormat("yyyy/MM/dd",
+        String date_n = new SimpleDateFormat("yyyy-MM-dd",
                 Locale.getDefault()).format(new Date());
         edit_dateNote08.setText(date_n);
 
@@ -135,7 +135,7 @@ public class Exclude_Fragment extends Fragment {
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             monthOfYear = monthOfYear + 1;
-            edit_dateNote08.setText(year+"/"+monthOfYear+"/"+dayOfMonth);
+            edit_dateNote08.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
         }
     };
 
@@ -167,7 +167,6 @@ public class Exclude_Fragment extends Fragment {
 
             if (result != null){
                 Toast.makeText(getActivity(), "บันทึกข้อมูลเรียบร้อยแล้ว",Toast.LENGTH_SHORT).show();
-                edit_dateNote08.setText("");
                 edit_desc08.setText("");
 
             }else {

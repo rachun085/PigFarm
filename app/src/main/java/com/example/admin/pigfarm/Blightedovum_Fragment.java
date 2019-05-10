@@ -86,6 +86,11 @@ public class Blightedovum_Fragment extends Fragment {
         img_calNote16 = getView().findViewById(R.id.img_calNote16);
         btn_flacAct16 = getView().findViewById(R.id.btn_flacAct16);
 
+        String date_n = new SimpleDateFormat("yyyy-MM-dd",
+                Locale.getDefault()).format(new Date());
+
+        edit_dateNote16.setText(date_n);
+
         String url = "http://pigaboo.xyz/Query_BreedID.php?farm_id="+farm_id;
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
             @Override
@@ -131,7 +136,7 @@ public class Blightedovum_Fragment extends Fragment {
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             monthOfYear = monthOfYear + 1;
-            edit_dateNote16.setText(year+"/"+monthOfYear+"/"+dayOfMonth);
+            edit_dateNote16.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
         }
     };
 
@@ -141,7 +146,7 @@ public class Blightedovum_Fragment extends Fragment {
             try{
                 OkHttpClient _okHttpClient = new OkHttpClient();
                 RequestBody _requestBody = new FormBody.Builder()
-                        .add("event_id", "16")
+                        .add("event_id", "13")
                         .add("event_recorddate", edit_dateNote16.getText().toString())
                         .add("pig_id", spin_noteId16.getSelectedItem().toString())
                         .add("note", edit_msg16.getText().toString())
